@@ -2994,9 +2994,9 @@ const lerp=(a,b,t)=>a+(b-a)*t;
 const rnd=Math.random;
 
 /* ───────────── templates ───────────── */
-const STYLES=['FLUX','STRUCTURE','READOUT','PANORAMA','ECLIPSE','BARCODE','SCATTER','SEQUENCE','THERMAL','RADIAL','NEBULA','GALAXY','LATTICE','STREAM','SWARM','SHELL','TORUS','RAIN','WAVEFIELD','BURST','CONCRETE','ARCS','INK','RIPPLE','TRANSIT','PAVING','SURFACE','BUBBLES','FOAM','INSET','STRAND','TRUCHET','SPIRO','POLYGON','FACET','SOLID','TERRAIN','TUBE','MOIRE','RINGS','CODE','','','','','','','','','','ATLAS','SURVEY','FAN','ORBIT','COAST','QUADTREE','CELLS','NIGHT','FIELD','SCAN','SCOPE','DOTWAVE','STACK','SUNSET','PASTEL','RIDGE','NEST','NESTGRID','DIAMOND','TWIST','BLOB','GLYPH','GLYPHFORM','MESH','FLARE','ORB','DUNE','CHROME','SMEAR','TYPE','LEDWALL','ARCBARS','HEXTUNNEL','HEXCIRCUIT','BEAMS','SCRATCH','LISSAJOUS','VSPHERE','PIXELEYE','DASHRING','ACID','ACIDMIRROR','OILCELL','FIBER','FIBERRING','MEMBRANE','GLOWBLOB','SMOKE','DUSTRING','CAUSTIC','WATER','DEW','FROST','FOG','DUNE','CLOUDS','CORONA','PLANET','RAINGLASS','VEINS','CHLADNI','INTERFERENCE','STRINGS','HARMONOGRAPH','FIELD','PHASE','TOPO','TIDE','ORBITS','BEAT','SPHERE','WAVEFIELD','DISC','RINGWORLD','CLOUD','DRIFT','TORUSPT','SHELLS','LATTICE','RAINFALL','STRETCH','STRETCHWIDE','STRETCHSWEEP','STRETCHMIST','STRETCHSEA','DRONEMOUNT','DRONEFOREST','DRONECITY','DRONECOAST'];
+const STYLES=['FLUX','STRUCTURE','READOUT','PANORAMA','ECLIPSE','BARCODE','SCATTER','SEQUENCE','THERMAL','RADIAL','NEBULA','GALAXY','LATTICE','STREAM','SWARM','SHELL','TORUS','RAIN','WAVEFIELD','BURST','CONCRETE','ARCS','INK','RIPPLE','TRANSIT','PAVING','SURFACE','BUBBLES','FOAM','INSET','STRAND','TRUCHET','SPIRO','POLYGON','FACET','SOLID','TERRAIN','TUBE','MOIRE','RINGS','CODE','','','','','','','','','','ATLAS','SURVEY','FAN','ORBIT','COAST','QUADTREE','CELLS','NIGHT','FIELD','SCAN','SCOPE','DOTWAVE','STACK','SUNSET','PASTEL','RIDGE','NEST','NESTGRID','DIAMOND','TWIST','BLOB','GLYPH','GLYPHFORM','MESH','FLARE','ORB','DUNE','CHROME','SMEAR','TYPE','LEDWALL','ARCBARS','HEXTUNNEL','HEXCIRCUIT','BEAMS','SCRATCH','LISSAJOUS','VSPHERE','PIXELEYE','DASHRING','ACID','ACIDMIRROR','OILCELL','FIBER','FIBERRING','MEMBRANE','GLOWBLOB','SMOKE','DUSTRING','CAUSTIC','WATER','DEW','FROST','FOG','DUNE','CLOUDS','CORONA','PLANET','RAINGLASS','VEINS','CHLADNI','INTERFERENCE','STRINGS','HARMONOGRAPH','FIELD','PHASE','TOPO','TIDE','ORBITS','BEAT','SPHERE','WAVEFIELD','DISC','RINGWORLD','CLOUD','DRIFT','TORUSPT','SHELLS','LATTICE','RAINFALL','STRETCH','STRETCHWIDE','STRETCHSWEEP','STRETCHMIST','STRETCHSEA','DRONEMOUNT','DRONEFOREST','DRONECITY','DRONECOAST','','SCAFFOLD','TANGLE','SCANGORGE','SCANFOREST','SCANBOULDER'];
 const CODE_STYLE=40;
-const STYLE_JP=['収束する線','3Dデータ構造','数値パネル','星雲パノラマ','天体の満ち欠け','バーコード','点群プロット','塩基配列','熱分布マップ','放射ファイバー','粒子の雲','渦巻銀河','格子点と座標軸','粒子の流れ','群れ','球殻','トーラス','落ちる粒子','粒子の波面','爆発の波','壁と白い弧','弧と反射','白黒の液体','液体の波紋','夜の移動','石畳','水面','水中の泡','雲と泡','小窓','伸び続ける線','伸び続ける迷路','描き続ける曲線','多角形の無限ズーム','ローポリの面','3D多面体','ワイヤー地形','ワイヤートンネル','メッシュのモアレ','同心円の干渉','p5.js コード','','','','','','','','','','衛星写真の断片','三角測量の線','収束する線の束','円と補助線','海岸線と集落','四分木グリッド','光るセル','夜の街明かり','昼の農地と道','セルに地図が出る','重なる波形','点でできた波','編まれた波の段','夕焼けと波','パステルと波','稜線の重なり','回る入れ子の四角','四角のタイル','菱形の入れ子','ねじれる四角','つやのある球体','文字のモザイク','文字でできた形','ワイヤーのチューブ','横に伸びる光','山の上の光球','夕暮れの草原','液体クローム','横に流れるノイズ','大きな文字の組版','カーブしたLEDの壁','弧を描く光のバー','六角形のトンネル','六角タイルと回路','縦の光線とちり','フィルムの傷と光漏れ','オシロのリサージュ','ベクターの球と軌道','ピクセルの目','破線のリング','液体アシッド','鏡合わせの液体','油の泡','繊維の殻','繊維のリング','膜と等高線','光る塊','ぼやけた光の煙','散る粒子のリング','水底の光の網','水面のきらめき','水滴のマクロ','霜の結晶','霧と遠い灯り','砂丘の風紋','見上げた雲','皆既日食のコロナ','惑星の夜明け','窓の雨粒','葉脈の逆光','クラドニ図形','波の干渉の等高線','弦の倍音','ハーモノグラフ','磁力線','位相空間','地形の等高線','海面の線','軌道','うなり','点でできた球','点の波面','点の円盤銀河','点の惑星と環','点の雲','漂うちり','点のトーラス','入れ子の球殻','結晶格子','降る雨','横に引き伸ばされる風景','左右に流れる地平線','引き伸ばしが横切る湖','霧の山並みの引き伸ばし','海と夕日の引き伸ばし','山岳の空撮','森の空撮','都市の空撮','海岸の空撮'];
+const STYLE_JP=['収束する線','3Dデータ構造','数値パネル','星雲パノラマ','天体の満ち欠け','バーコード','点群プロット','塩基配列','熱分布マップ','放射ファイバー','粒子の雲','渦巻銀河','格子点と座標軸','粒子の流れ','群れ','球殻','トーラス','落ちる粒子','粒子の波面','爆発の波','壁と白い弧','弧と反射','白黒の液体','液体の波紋','夜の移動','石畳','水面','水中の泡','雲と泡','小窓','伸び続ける線','伸び続ける迷路','描き続ける曲線','多角形の無限ズーム','ローポリの面','3D多面体','ワイヤー地形','ワイヤートンネル','メッシュのモアレ','同心円の干渉','p5.js コード','','','','','','','','','','衛星写真の断片','三角測量の線','収束する線の束','円と補助線','海岸線と集落','四分木グリッド','光るセル','夜の街明かり','昼の農地と道','セルに地図が出る','重なる波形','点でできた波','編まれた波の段','夕焼けと波','パステルと波','稜線の重なり','回る入れ子の四角','四角のタイル','菱形の入れ子','ねじれる四角','つやのある球体','文字のモザイク','文字でできた形','ワイヤーのチューブ','横に伸びる光','山の上の光球','夕暮れの草原','液体クローム','横に流れるノイズ','大きな文字の組版','カーブしたLEDの壁','弧を描く光のバー','六角形のトンネル','六角タイルと回路','縦の光線とちり','フィルムの傷と光漏れ','オシロのリサージュ','ベクターの球と軌道','ピクセルの目','破線のリング','液体アシッド','鏡合わせの液体','油の泡','繊維の殻','繊維のリング','膜と等高線','光る塊','ぼやけた光の煙','散る粒子のリング','水底の光の網','水面のきらめき','水滴のマクロ','霜の結晶','霧と遠い灯り','砂丘の風紋','見上げた雲','皆既日食のコロナ','惑星の夜明け','窓の雨粒','葉脈の逆光','クラドニ図形','波の干渉の等高線','弦の倍音','ハーモノグラフ','磁力線','位相空間','地形の等高線','海面の線','軌道','うなり','点でできた球','点の波面','点の円盤銀河','点の惑星と環','点の雲','漂うちり','点のトーラス','入れ子の球殻','結晶格子','降る雨','横に引き伸ばされる風景','左右に流れる地平線','引き伸ばしが横切る湖','霧の山並みの引き伸ばし','海と夕日の引き伸ばし','山岳の空撮','森の空撮','都市の空撮','海岸の空撮','','足場のワイヤー構造','絡まる糸の柱','点群スキャン：滝の渓谷','点群スキャン：森','点群スキャン：岩場'];
 const MOTIONS=['SLOW','PULSE','ROTATE','ZOOM','FLOW','GLITCH'];
 const CAMS=['STATIC','FLY','MACRO','WIDE','TUNNEL'];
 const STYLE_P={'FLUX':'monochrome data art, hundreds of thin white lines converging to a vanishing point, binary data blocks streaming along the lines, LED wall',
@@ -3069,7 +3069,7 @@ const STYLE_P={'FLUX':'monochrome data art, hundreds of thin white lines converg
 'DUNE':'dusk landscape, layered hills and swaying grass silhouettes against an orange sky',
 'CHROME':'liquid chrome sphere morphing, studio reflections, dark background',
 'SMEAR':'horizontal pixel smear glitch of blue, violet and pink colour fields',
-'TYPE':'large blocky glyph collage on a multi-scale grid, black, white and blue','LEDWALL':'curved LED wall panorama with pixel shapes and floor reflection','ARCBARS':'stacked curved bars of white light scrolling','HEXTUNNEL':'infinite hexagonal wireframe tunnel','HEXCIRCUIT':'nested hexagon tiles over glowing circuit traces','BEAMS':'vertical light beams with dust and film scratches','SCRATCH':'film light leak with flickering scratches','LISSAJOUS':'green phosphor oscilloscope lissajous figure','VSPHERE':'green vector sphere with orbit ellipses','PIXELEYE':'big pixel mosaic of an eye','DASHRING':'barcode ring of radial dashes','ACID':'psychedelic liquid acid flow','ACIDMIRROR':'mirrored kaleidoscopic liquid','OILCELL':'oil bubbles with bright rims','FIBER':'shell made of glowing hair-like fibres','FIBERRING':'ring and cylinder of glowing fibres','MEMBRANE':'blob membrane with topographic mesh','GLOWBLOB':'soft glowing blob with dithered edge','SMOKE':'blurred drifting light shapes','DUSTRING':'particles drifting off a ring','CAUSTIC':'caustic light network on a pool floor','WATER':'ambient water','DEW':'ambient dew','FROST':'ambient frost','FOG':'ambient fog','DUNE':'ambient dune','CLOUDS':'ambient clouds','CORONA':'ambient corona','PLANET':'ambient planet','RAINGLASS':'ambient rainglass','VEINS':'ambient veins','CHLADNI':'ambient chladni','INTERFERENCE':'ambient interference','STRINGS':'ambient strings','HARMONOGRAPH':'ambient harmonograph','FIELD':'ambient field','PHASE':'ambient phase','TOPO':'ambient topo','TIDE':'ambient tide','ORBITS':'ambient orbits','BEAT':'ambient beat','SPHERE':'ambient sphere','WAVEFIELD':'ambient wavefield','DISC':'ambient disc','RINGWORLD':'ambient ringworld','CLOUD':'ambient cloud','DRIFT':'ambient drift','TORUSPT':'ambient toruspt','SHELLS':'ambient shells','LATTICE':'ambient lattice','RAINFALL':'ambient rainfall','STRETCH':'ambient stretch','STRETCHWIDE':'ambient stretchwide','STRETCHSWEEP':'ambient stretchsweep','STRETCHMIST':'ambient stretchmist','STRETCHSEA':'ambient stretchsea','DRONEMOUNT':'ambient dronemount','DRONEFOREST':'ambient droneforest','DRONECITY':'ambient dronecity','DRONECOAST':'ambient dronecoast'};
+'TYPE':'large blocky glyph collage on a multi-scale grid, black, white and blue','LEDWALL':'curved LED wall panorama with pixel shapes and floor reflection','ARCBARS':'stacked curved bars of white light scrolling','HEXTUNNEL':'infinite hexagonal wireframe tunnel','HEXCIRCUIT':'nested hexagon tiles over glowing circuit traces','BEAMS':'vertical light beams with dust and film scratches','SCRATCH':'film light leak with flickering scratches','LISSAJOUS':'green phosphor oscilloscope lissajous figure','VSPHERE':'green vector sphere with orbit ellipses','PIXELEYE':'big pixel mosaic of an eye','DASHRING':'barcode ring of radial dashes','ACID':'psychedelic liquid acid flow','ACIDMIRROR':'mirrored kaleidoscopic liquid','OILCELL':'oil bubbles with bright rims','FIBER':'shell made of glowing hair-like fibres','FIBERRING':'ring and cylinder of glowing fibres','MEMBRANE':'blob membrane with topographic mesh','GLOWBLOB':'soft glowing blob with dithered edge','SMOKE':'blurred drifting light shapes','DUSTRING':'particles drifting off a ring','CAUSTIC':'caustic light network on a pool floor','WATER':'ambient water','DEW':'ambient dew','FROST':'ambient frost','FOG':'ambient fog','DUNE':'ambient dune','CLOUDS':'ambient clouds','CORONA':'ambient corona','PLANET':'ambient planet','RAINGLASS':'ambient rainglass','VEINS':'ambient veins','CHLADNI':'ambient chladni','INTERFERENCE':'ambient interference','STRINGS':'ambient strings','HARMONOGRAPH':'ambient harmonograph','FIELD':'ambient field','PHASE':'ambient phase','TOPO':'ambient topo','TIDE':'ambient tide','ORBITS':'ambient orbits','BEAT':'ambient beat','SPHERE':'ambient sphere','WAVEFIELD':'ambient wavefield','DISC':'ambient disc','RINGWORLD':'ambient ringworld','CLOUD':'ambient cloud','DRIFT':'ambient drift','TORUSPT':'ambient toruspt','SHELLS':'ambient shells','LATTICE':'ambient lattice','RAINFALL':'ambient rainfall','STRETCH':'ambient stretch','STRETCHWIDE':'ambient stretchwide','STRETCHSWEEP':'ambient stretchsweep','STRETCHMIST':'ambient stretchmist','STRETCHSEA':'ambient stretchsea','DRONEMOUNT':'ambient dronemount','DRONEFOREST':'ambient droneforest','DRONECITY':'ambient dronecity','DRONECOAST':'ambient dronecoast','':'ambient ','SCAFFOLD':'ambient scaffold','TANGLE':'ambient tangle','SCANGORGE':'ambient scangorge','SCANFOREST':'ambient scanforest','SCANBOULDER':'ambient scanboulder'};
 const MOTION_P={SLOW:'slow drifting motion',PULSE:'rhythmic pulsation synced to the beat',ROTATE:'continuous rotation',ZOOM:'infinite zoom',FLOW:'smooth fluid flow',GLITCH:'digital glitch bursts, datamosh'};
 const CAM_P={STATIC:'locked-off static camera',FLY:'low fly-through camera over the surface',MACRO:'extreme macro close-up, shallow depth of field',WIDE:'ultra wide view',TUNNEL:'infinite tunnel movement'};
 const SUFFIX='seamless loop, VJ visual, high contrast, crisp sharp detail, high resolution, dark background, 16:9, no text, no watermark';
@@ -3137,7 +3137,7 @@ function randomGenome(sel){
   };
 }
 function hueLerp(a,b,t){let d=((b-a)%1+1.5)%1-.5;return ((a+d*t)%1+1)%1}
-function seriesOf(s){return s>=130?130:s>=120?120:s>=110?110:s>=100?100:s>=90?90:s>=80?80:s>=70?70:s>=60?60:s>=50?50:s>=40?40:s>=30?30:(s>=20?20:(s>=10?10:0))}
+function seriesOf(s){return s>=140?140:s>=130?130:s>=120?120:s>=110?110:s>=100?100:s>=90?90:s>=80?80:s>=70?70:s>=60?60:s>=50?50:s>=40?40:s>=30?30:(s>=20?20:(s>=10?10:0))}
 function mutate(base,opt={}){
   const k=S.keep, w=opt.w!=null?opt.w:(S.mut>=.995?1:Math.pow(S.mut,1.25));
   const sel=S.sel;
@@ -4247,6 +4247,71 @@ vec3 ambStyle(vec2 p,vec2 q,float as,vec2 fc,float c,float th,float K,vec4 sd){
  if(as>=19.5)return cosStyle(p,q,as-20.,fc,c,th,m,sd);
  if(as>=9.5)return frqStyle(p,q,as-10.,fc,c,th,m,sd);
  return natStyle(p,q,max(as,0.),fc,c,th,m,sd);}
+// ═════ AERIAL v2 — eroded terrain, soft shadows, aerial perspective (loop-exact along the flight path) ═════
+vec3 aNd(vec2 x,vec2 per){vec2 i=floor(x),f=fract(x);vec2 u=f*f*f*(f*(f*6.-15.)+10.),du=30.*f*f*(f*(f-2.)+1.);
+ float a=h21(mod(i,per)),b=h21(mod(i+vec2(1.,0.),per)),c=h21(mod(i+vec2(0.,1.),per)),d=h21(mod(i+vec2(1.,1.),per));
+ float k1=b-a,k2=c-a,k4=a-b-c+d;return vec3(a+k1*u.x+k2*u.y+k4*u.x*u.y,du*vec2(k1+k4*u.y,k2+k4*u.x));}
+float aTerr(vec2 xz,float per0,float oct){ // eroded fbm: slopes damp the finer octaves
+ vec2 p=xz*.125,per=vec2(1e4,per0),d=vec2(0.);float a=0.,b=.55;
+ for(int i=0;i<9;i++){if(float(i)>=oct)break;vec3 n=aNd(p,per);d+=n.yz;a+=b*n.x/(1.+dot(d,d));b*=.5;p=p*2.+vec2(31.7,0.);per*=2.;}
+ return a;}
+vec3 aSky2(vec3 rd,vec3 sun){
+ float sd=max(dot(rd,sun),0.);vec3 c=mix(vec3(.78,.82,.86),vec3(.3,.46,.7),smoothstep(-.02,.45,rd.y));
+ c=mix(c,vec3(1.,.8,.58),pow(sd,6.)*.55*exp(-max(rd.y,0.)*3.));
+ return c+vec3(1.,.9,.75)*(pow(sd,400.)*3.+pow(sd,40.)*.25);}
+vec3 aFly2(vec2 q,float c,float th,vec4 sd,float kind,float dig){
+ float P=96.,per0=12.,z0=c*P;                       // the terrain tiles every 96 units along z: one tile per loop
+ float H=kind<.5?13.:(kind<1.5?7.:6.),base=kind>2.5?-2.6:0.;
+ float alt=(kind<.5?13.5:(kind<1.5?9.:6.5))+1.2*sin(th)+.6*sin(th*2.+1.);
+ vec3 ro=vec3(3.*sin(th)+sd.x*40.,alt,z0);
+ vec3 rd=normalize(vec3(q.x,q.y-.28-.05*sin(th*2.),1.45));rd.xy=rot(.06*sin(th)+.02*sin(th*3.))*rd.xy;rd.xz=rot(.08*cos(th))*rd.xz;
+ vec3 sun=normalize(vec3(-.78,kind>2.5?.2:.3,.42));
+ vec3 sky=aSky2(rd,sun),col=sky;
+ // march (6 octaves), then refine
+ float t=1.,tp=1.;int hit=0;
+ for(int i=0;i<84;i++){vec3 p=ro+rd*t;float h=aTerr(p.xz,per0,6.)*H+base;float dy=p.y-h;
+  if(kind>2.5&&p.y<0.){hit=2;break;}
+  if(dy<.0015*t){hit=1;break;}tp=t;t+=max(dy*.42,.01*t);if(t>140.)break;}
+ if(hit==1){float a=tp,b=t;for(int k=0;k<5;k++){float m=.5*(a+b);vec3 pm=ro+rd*m;if(pm.y-aTerr(pm.xz,per0,6.)*H-base<0.)b=m;else a=m;}t=b;}
+ if(hit==2)t=-ro.y/rd.y;
+ if(hit==0)return sky;
+ vec3 p=ro+rd*t;
+ float e=.02+.0015*t,hh=aTerr(p.xz,per0,9.)*H+base;
+ vec3 n=normalize(vec3(aTerr(p.xz-vec2(e,0.),per0,9.)*H-aTerr(p.xz+vec2(e,0.),per0,9.)*H,2.*e,aTerr(p.xz-vec2(0.,e),per0,9.)*H-aTerr(p.xz+vec2(0.,e),per0,9.)*H));
+ // soft shadow toward the sun
+ float sh=1.,st=.3;
+ for(int i=0;i<14;i++){vec3 sp=vec3(p.x,hh,p.z)+n*.05+sun*st;float dh=sp.y-(aTerr(sp.xz,per0,5.)*H+base);sh=min(sh,10.*dh/st);st+=.25+st*.35;if(sh<.01||st>30.)break;}
+ sh=clamp(sh,0.,1.);sh=sh*sh*(3.-2.*sh);
+ float slope=n.y,hn=(hh-base)/H,nz=noiseT(p.xz*1.3,vec2(1e4,P*1.3)),nz2=noiseT(p.xz*7.,vec2(1e4,P*7.));
+ vec3 alb;
+ if(kind<.5){ // MOUNTAIN — rock faces, scree, alpine grass (no snow)
+  vec3 rock=mix(vec3(.42,.36,.3),vec3(.64,.56,.46),nz)*(.85+.3*nz2);rock*=.9+.12*sin(hh*9.+nz*3.);
+  vec3 grass=mix(vec3(.26,.33,.12),vec3(.44,.45,.2),nz);
+  alb=mix(rock,grass,smoothstep(.72,.86,slope)*smoothstep(.75,.45,hn));
+ }else if(kind<1.5){ // FOREST — dense canopy, lighter clearings
+  float cr=noiseT(p.xz*16.,vec2(1e4,P*16.));vec3 can=mix(vec3(.07,.15,.05),vec3(.2,.32,.11),nz2)*(.55+.7*cr)*(.8+.4*nz);
+  alb=mix(mix(vec3(.3,.29,.22),vec3(.22,.24,.13),nz),can,smoothstep(.55,.75,slope)*smoothstep(.95,.6,hn+.1*nz));
+ }else{ // COAST — sand, scrub and cliffs
+  vec3 sand=vec3(.76,.68,.52)*(.9+.15*nz2),scrub=mix(vec3(.16,.22,.1),vec3(.32,.33,.18),nz),cliff=mix(vec3(.45,.4,.34),vec3(.6,.55,.47),nz);
+  alb=mix(sand,mix(cliff,scrub,smoothstep(.65,.85,slope)),smoothstep(.15,.6,hh));
+ }
+ vec3 sunC=vec3(1.,.84,.64)*2.6,amb=vec3(.45,.55,.7)*.75;
+ vec3 lit=alb*(sunC*max(dot(n,sun),0.)*sh+amb*(.6+.4*slope)+vec3(.3,.25,.2)*.15*max(dot(n,normalize(vec3(-sun.x,0.,-sun.z))),0.));
+ if(hit==2){ // sea: depth colour, foam, reflections, glitter
+  float depth=-(aTerr(p.xz,per0,6.)*H+base);
+  vec2 wo=.35*vec2(cos(th*4.),sin(th*4.));vec2 wv=vec2(noiseT(p.xz*.9+wo,vec2(1e4,P*.9)),noiseT(p.xz*.9+5.-wo,vec2(1e4,P*.9)))-.5;
+  vec3 nw=normalize(vec3(wv.x*.25,1.,wv.y*.25));float fr=.03+.97*pow(1.-max(dot(-rd,nw),0.),5.);
+  vec3 wc=mix(vec3(.1,.55,.55),vec3(.02,.12,.2),smoothstep(0.,2.2,depth));
+  lit=mix(wc*(.5+.5*max(dot(nw,sun),0.)),aSky2(reflect(rd,nw),sun),fr)+vec3(1.,.9,.75)*pow(max(dot(reflect(rd,nw),sun),0.),120.)*1.5;
+  float foam=smoothstep(.25,.0,depth)*(.6+.4*sin(depth*30.-th*6.));lit=mix(lit,vec3(.95),clamp(foam,0.,1.)*.75);
+ }
+ // a quiet digital layer: contour lines and survey points
+ if(hit==1&&dig>.5){float lv=hh*.8;lit+=vec3(.65,.88,1.)*.18*(1.-smoothstep(0.,.07,abs(fract(lv)-.5)*2.))*exp(-t*.02);
+  vec2 gp=abs(fract(p.xz/8.)-.5)*8.;lit+=vec3(.75,.92,1.)*.5*(1.-smoothstep(.06,.12,length(gp)))*exp(-t*.03);}
+ // aerial perspective: distance haze tinted toward the sun, mist in low ground
+ float fogd=1.-exp(-t*(kind<.5?.012:.018));float mist=kind>.5&&kind<1.5?smoothstep(2.2,.0,p.y)*.6:0.;
+ vec3 fogc=mix(vec3(.66,.72,.8),vec3(1.,.84,.64),pow(max(dot(rd,sun),0.),5.));
+ return mix(lit,fogc,clamp(fogd+mist*(1.-fogd),0.,1.));}
 // ═════ AMBIENT SCENE (130-138): panoramic slit-scan landscapes · aerial drone flights with a quiet digital layer ═════
 vec3 aGrainC(vec3 c,vec2 q,vec2 fc,float cc){float fl=floor(cc*uL*12.);
  c=c*(.97+.03*h21(vec2(fl,1.)))+(h21(floor(fc)+fl*17.31)-.5)*.04;return clamp(c*(1.-.35*dot(q,q)),0.,1.);}
@@ -4340,7 +4405,7 @@ vec3 sceneStyle(vec2 p,vec2 q,float ss,vec2 fc,float c,float th,float m,vec4 sd)
   if((kind>1.5&&q.x>xs)||(kind<1.5&&q.x<xs))col*=.9+.1*row;
   return aGrainC(col,q,fc,c);}
  // DRONE — mountains / forest / city / coast
- return aGrainC(aFly(q,c,th,sd,ss-5.,dig),q,fc,c);}
+ float k=ss-5.;return aGrainC(k>1.5&&k<2.5?aFly(q,c,th,sd,k,dig):aFly2(q,c,th,sd,k,dig),q,fc,c);}
 // ═════ AMBIENT v2 (100-129): FILM (実写の質感) · LINE (ラインアート) · PARTICLE (3Dの粒子) — installation, monochrome, slow ═════
 vec3 aMono(vec3 c,float k){return vec3(clamp(dot(c,vec3(.299,.587,.114))*k,0.,1.));}
 vec3 aTint(){return mix(vec3(1.),normalize(uAcc+.001)*1.732,.14);}
@@ -4487,8 +4552,77 @@ vec3 ptclStyle2(vec2 p,vec2 q,float ps,vec2 fc,float c,float th,float m,vec4 sd)
    v+=(1.-smoothstep(r*.5,r*1.5,ds))/(bl*bl)*.9;}
  }
  return vec3(.016)+clamp(v*1.75,0.,1.6)*vec3(.93)*aTint();}
+// ═════ SCAN (140-144): scaffold line structures · coloured point-cloud scans of nature ═════
+vec3 aPrj(vec3 p,float ang,float D){p.xz=rot(ang)*p.xz;float z=p.z+D;return vec3(p.xy*1.6/max(z,.05),z);}
+vec3 aScaffold(vec2 q,float c,float th,float m,vec4 sd,float dense){
+ float D=2.7,ang=th+sd.x*6.,hs=.22,K=24.,s=c*m*K*hs;   // rises 24 levels per loop, content repeats every 24 levels: loop-exact
+ float yw=q.y*D/1.6+s,L0=floor(yw/hs),ink=0.,dot2=0.;
+ for(int j=-2;j<=2;j++){float L=L0+float(j),id=mod(L,K),y0=L*hs-s;float h=h21(vec2(id,sd.y*17.));
+  if(dense<.5&&h>.25){ // a wire box (some span two levels)
+   float bw=.16+.22*h21(vec2(id,3.)),bh=hs*(1.+floor(h21(vec2(id,5.))*2.)),ba=h21(vec2(id,7.))*TAU;vec2 bo=(h22(vec2(id,9.))-.5)*.18;
+   for(int e=0;e<12;e++){float fe=float(e);vec3 a,b;
+    float k=mod(fe,4.),k2=mod(fe+1.,4.);vec2 c1=vec2(k<1.5?-1.:1.,(k<.5||k>2.5)?-1.:1.),c2=vec2(k2<1.5?-1.:1.,(k2<.5||k2>2.5)?-1.:1.);
+    if(fe<4.){a=vec3(c1.x,0.,c1.y);b=vec3(c2.x,0.,c2.y);}else if(fe<8.){a=vec3(c1.x,1.,c1.y);b=vec3(c2.x,1.,c2.y);}else{a=vec3(c1.x,0.,c1.y);b=vec3(c1.x,1.,c1.y);}
+    a.xz=rot(ba)*(a.xz*bw)+bo;b.xz=rot(ba)*(b.xz*bw)+bo;a.y=y0+a.y*bh;b.y=y0+b.y*bh;
+    vec3 pa=aPrj(a,ang,D),pb=aPrj(b,ang,D);ink=max(ink,LN(sdSeg(q,pa.xy,pb.xy),PX*.55)*(.55+.45*smoothstep(4.,1.8,.5*(pa.z+pb.z))));}}
+  for(int i=0;i<26;i++){float fi=float(i);if(dense<.5&&fi>9.5)break;vec2 hh=h22(vec2(id*13.+fi,sd.z*7.));
+   float r=.5*sqrt(hh.x),aa=hh.y*TAU;vec3 a=vec3(r*cos(aa),y0+h21(vec2(id,fi+20.))*hs,r*sin(aa));
+   vec3 dv=normalize(h22(vec2(fi,id+40.)).xyx-.5+vec3(0.,.0,h21(vec2(fi,id))-.5));float ln=(dense<.5?.08+.35*h21(vec2(fi,id+3.)):.04+.16*h21(vec2(fi,id+3.)));
+   if(h21(vec2(fi,id+7.))<.4)dv=vec3(0.,1.,0.);
+   vec3 pa=aPrj(a,ang,D),pb=aPrj(a+dv*ln,ang,D);float dd=sdSeg(q,pa.xy,pb.xy);float fz=.4+.6*smoothstep(4.,1.8,pa.z);
+   ink=max(ink,LN(dd,PX*(dense<.5?.4:.3))*fz*(.5+.5*h21(vec2(fi,id+11.))));
+   dot2=max(dot2,(1.-smoothstep(PX*1.,PX*2.2,length(q-pb.xy)))*fz);}}
+ return vec3(.93)*clamp(ink+dot2*.8,0.,1.)*aTint();}
+float aScanH(vec2 xz,float kind){
+ if(kind<.5){ // GORGE: rocky ravine with a step where the water drops
+  float v=abs(xz.x+.08*sin(xz.y*3.));float h=.85*smoothstep(.12,.85,v)+.32*aTerr(xz*6.+3.,1e4,5.)-.15-.45*smoothstep(-.04,.04,xz.y);return h;}
+ if(kind<1.5){ // FOREST: ground with tree crowns
+  float g=.2*aTerr(xz*3.,1e4,4.);vec2 ce=floor(xz/.22);vec2 tc=(ce+.25+.5*h22(ce))*.22;float r=.07+.06*h21(ce+3.),d=length(xz-tc);
+  float cr=d<r?(.25+.25*h21(ce+5.))*sqrt(1.-d*d/(r*r)):0.;return g+cr*step(.25,h21(ce+9.));}
+ // BOULDERS: a field of rounded stones
+ vec2 ce=floor(xz/.3-.5);float h=.08*aTerr(xz*5.,1e4,4.);
+ for(int j=0;j<=1;j++)for(int i=0;i<=1;i++){vec2 cc=ce+vec2(float(i),float(j));vec2 bc=(cc+.2+.6*h22(cc))*.3;float r=.07+.11*h21(cc+2.),d=length(xz-bc);
+  if(d<r)h=max(h,r*.9*sqrt(1.-d*d/(r*r))+.02*noise(xz*40.));}
+ return h;}
+vec3 aScan(vec2 q,float c,float th,float m,vec4 sd,float kind){
+ vec3 ro=vec3(3.3*sin(th*.5+sd.x*6.),1.55+.35*sin(th),-3.3*cos(th*.5+sd.x*6.)),ta=vec3(0.,.15,0.),rd=aCam(q,ro,ta);
+ vec3 bg=mix(vec3(.02,.03,.04),mix(vec3(.12,.05,.08),vec3(.03,.1,.12),.5+.5*q.x),.5+.5*q.y)*.7;vec3 col=bg;
+ float t=.5,tp=.5;int hit=0;
+ for(int i=0;i<90;i++){vec3 p=ro+rd*t;float dy=p.y-aScanH(p.xz,kind);if(dy<.002*t){hit=1;break;}tp=t;t+=max(dy*.4,.006);if(t>7.)break;}
+ if(hit==1&&max(abs((ro+rd*t).x),abs((ro+rd*t).z))<1.25){
+  vec3 P=ro+rd*t;float cs=kind<.5?.018:.022;vec2 ce=floor(P.xz/cs);vec2 pxz=(ce+.2+.6*h22(ce))*cs;float py=aScanH(pxz,kind);
+  float v=aPt(ro,rd,vec3(pxz.x,py,pxz.y),3.3)*2.3;
+  float e=.02,sl=clamp(1.-(abs(aScanH(pxz+vec2(e,0.),kind)-py)+abs(aScanH(pxz+vec2(0.,e),kind)-py))/e*.6,0.,1.);
+  vec3 alb;float nz=noise(pxz*30.);
+  if(kind<.5){alb=mix(vec3(.55,.55,.56),vec3(.85,.86,.88),nz);alb=mix(alb,vec3(.3,.45,.22),smoothstep(.55,.85,sl)*step(.25,py)*.8);
+   alb=mix(alb,vec3(.8,.9,1.)*(.8+.4*h21(ce+floor(c*uL*10.))),smoothstep(.0,-.12,py-.05+.4*smoothstep(-.04,.04,pxz.y))*step(abs(pxz.x),.2));}
+  else if(kind<1.5){alb=py>.12?mix(vec3(.3,.5,.2),vec3(.6,.7,.35),nz):mix(vec3(.4,.34,.25),vec3(.3,.38,.2),nz);}
+  else{alb=mix(vec3(.5,.48,.45),vec3(.78,.76,.72),nz)*(.6+.4*sl);}
+  col=bg+alb*v*(.6+.5*sl);}
+ // falling water (gorge only)
+ if(kind<.5&&abs(rd.z)>1e-3){float tz=(0.-ro.z)/rd.z;vec3 P=ro+rd*tz;
+  if(tz>0.&&abs(P.x)<.12&&P.y>-.3&&P.y<.45){float cs=.016,Kf=.96;vec2 g=vec2(P.x,P.y+c*m*Kf);vec2 ce=floor(g/cs);
+   vec2 pt=(ce+.2+.6*h22(ce))*cs;if(h21(ce+3.)<.55)col+=vec3(.85,.92,1.)*aPt(ro,rd,vec3(pt.x,pt.y-c*m*Kf,0.),3.3)*1.8;}}
+ // scan dust and the faint bounding frame
+ for(int k=0;k<4;k++){float yk=-.1+float(k)*.25;if(abs(rd.y)<1e-3)continue;float tt=(yk-ro.y)/rd.y;if(tt<0.)continue;vec3 P=ro+rd*tt;
+  vec2 ce=floor(P.xz/.08);vec2 pt=(ce+.2+.6*h22(ce+float(k)))*.08;if(h21(ce+float(k)*7.)>.06||max(abs(pt.x),abs(pt.y))>1.2)continue;
+  col+=vec3(.8)*aPt(ro,rd,vec3(pt.x,yk,pt.y),3.3)*.8;}
+ float fr=0.;vec3 bmin=vec3(-1.2,-.4,-1.2),bmax=vec3(1.2,1.,1.2);
+ for(int e=0;e<12;e++){float fe=float(e),k=mod(fe,4.);vec3 a=vec3(k<1.5?bmin.x:bmax.x,0.,(k<.5||k>2.5)?bmin.z:bmax.z),b;float k2=mod(fe+1.,4.);
+  b=vec3(k2<1.5?bmin.x:bmax.x,0.,(k2<.5||k2>2.5)?bmin.z:bmax.z);
+  if(fe<4.){a.y=bmin.y;b.y=bmin.y;}else if(fe<8.){a.y=bmax.y;b.y=bmax.y;}else{a.y=bmin.y;b=a;b.y=bmax.y;}
+  vec3 wa=a-ro,wb=b-ro;vec3 ww=normalize(ta-ro),uu=normalize(cross(ww,vec3(0.,1.,0.))),vv=cross(uu,ww);
+  float za=dot(wa,ww),zb=dot(wb,ww);if(za<.1||zb<.1)continue;vec2 sa=vec2(dot(wa,uu),dot(wa,vv))*1.6/za,sb=vec2(dot(wb,uu),dot(wb,vv))*1.6/zb;
+  fr=max(fr,LN(sdSeg(q,sa,sb),PX*.45));}
+ col+=mix(vec3(.2,.8,.9),vec3(.9,.3,.7),.5+.5*q.y)*fr*.35;
+ return col;}
+vec3 scanStyle(vec2 p,vec2 q,float ss,vec2 fc,float c,float th,float m,vec4 sd){
+ if(ss<.5)return aScaffold(q,c,th,m,sd,0.);    // SCAFFOLD — wire boxes and tangled segments, rising
+ if(ss<1.5)return aScaffold(q,c,th,m,sd,1.);   // TANGLE — a column of fine tangled threads
+ return aScan(q,c,th,m,sd,ss-2.);}             // SCAN — gorge with falling water / forest / boulders
 vec3 ambStyle2(vec2 p,vec2 q,float as,vec2 fc,float c,float th,float K,vec4 sd){
  float m=max(1.,K);
+ if(as>=39.5)return scanStyle(p,q,as-40.,fc,c,th,m,sd);
  if(as>=29.5)return sceneStyle(p,q,as-30.,fc,c,th,m,sd);
  if(as>=19.5)return ptclStyle2(p,q,as-20.,fc,c,th,m,sd);
  if(as>=9.5)return lineStyle2(p,q,as-10.,fc,c,th,m,sd);
@@ -5866,7 +6000,7 @@ function tick(nowMs){
   const dt=Math.min(.1,(nowMs-last)/1000);last=nowMs;const now=nowMs/1000;frame++;
   analyse(now,dt);lkAudioIn(dt);
   {const tg=(S.fx.active||S.fx.hold)?1:0;S.fx.amt+=(tg-S.fx.amt)*(1-Math.exp(-dt*(tg?25:14)));if(S.fx.amt<.002)S.fx.amt=0}
-  const adv=g=>{if(g)g.lt=((g.lt||0)+dt)%S.loop.len};
+  const adv=g=>{if(g)g.lt=((g.lt||0)+dt*(window.__AMRATE||1))%S.loop.len};
   const sndOn=S.snd.src&&A.ctx&&S.out;
   {const C=S.clock;C.bpm=clamp(A.bpm,40,220);C.ph+=dt*C.bpm/60;const bi=Math.floor(C.ph);if(bi!==C.last){C.last=bi;clockBeat(bi)}C.pulse*=Math.exp(-dt*7)}
   if(S.xf.anim){const a=S.xf.anim;a.t+=dt/a.dur;const e=a.t>=1?1:a.t*a.t*(3-2*a.t);S.fv=lerp(a.from,a.to,e);if(a.t>=1){S.fv=a.to;S.xf.anim=null}}
@@ -6418,7 +6552,7 @@ refill();lkBoot();codeBoot();
 const AM={tpl:0,cur:null,bpm:124,title:true,pend:null,lastSwitchBeat:-999,fxOffAt:-1,
   sp:{cid:'',at:'',rt:'',exp:0,track:null,playing:false,pollT:0,backoff:0,err:''}};
 const range=(a,b)=>{const o=[];for(let i=a;i<=b;i++)o.push(i);return o};
-const SER={FILM:range(100,109),LINE:range(110,119),PTCL:range(120,129),SCENE:range(130,134),AERIAL:range(135,138)};
+const SER={FILM:range(100,109).filter(x=>x!==102),LINE:range(110,119),PTCL:range(120,129),SCENE:range(130,134),AERIAL:range(135,138),SCAN:range(140,144)};
 window.__AMCALM={low:.35,mid:.45,high:.25,lvl:.6,beat:0,kick:0,hat:0,bass:.35,energy:.6};
 const GRADE0={hue:0,sat:100,con:100,exp:0,bloom:0,tintAmt:0,tintHue:200,inv:false,mono:false,flash:false};
 /* テンプレート：
@@ -6427,7 +6561,7 @@ const GRADE0={hue:0,sat:100,con:100,exp:0,bloom:0,tintAmt:0,tintHue:200,inv:fals
    pal=色の決め方 / cam=360°カメラ / grade=色補正 / fx=拍でFXを打つ */
 const palMono=r=>({hue:r(),sat:0,spread:.05});
 const palTint=r=>({hue:[.07,.1,.13,.52,.56,.6][Math.floor(r()*6)],sat:.18+r()*.2,spread:.05});
-const ALL=[...SER.FILM,...SER.LINE,...SER.PTCL,...SER.SCENE,...SER.AERIAL];
+const ALL=[...SER.FILM,...SER.LINE,...SER.PTCL,...SER.SCENE,...SER.AERIAL,...SER.SCAN];
 const TPL=[
  {n:'GALLERY',jp:'白黒・静かな展示',pool:ALL,motions:[0],cams:[0],x:'fade',xb:64,scene:64,mut:.15,track:96,
   pal:palMono,cam:{mode:'drift',range:20,speed:35,every:8},camW:{off:.7,drift:.3},grade:{con:100}},
@@ -6441,6 +6575,8 @@ const TPL=[
   pal:palTint,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:15}},
  {n:'AERIAL',jp:'ドローンの空撮・前進',pool:SER.AERIAL,motions:[0],cams:[0],x:'fade',xb:32,scene:64,mut:.15,track:64,
   pal:palTint,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:10}},
+ {n:'SCAN',jp:'点群スキャン・ワイヤー構造',pool:SER.SCAN,motions:[0],cams:[0],x:'dissolve',xb:24,scene:32,mut:.2,track:64,
+  pal:palMono,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:12}},
  {n:'DEEP CALM',jp:'とても長いフェード・淡い色味',pool:ALL,motions:[0],cams:[0],x:'fade',xb:64,scene:96,mut:.12,track:128,
   pal:palTint,cam:{mode:'drift',range:15,speed:30,every:8},camW:{off:.75,drift:.25},grade:{con:95,bloom:10}},
  {n:'RANDOM',jp:'曲ごとにスタイル抽選',random:true},
@@ -6458,7 +6594,7 @@ function applyLook(t){
 }
 function curT(){return AM.cur||TPL[AM.tpl]}
 /* 映像の種類（元アプリのタブ）。何も選ばない＝AUTO（テンプレートのおすすめ） */
-const SER_JP={FILM:'実写の質感',LINE:'ラインアート',PTCL:'3Dの粒子',SCENE:'引き伸ばす風景',AERIAL:'ドローン空撮'};
+const SER_JP={FILM:'実写の質感',LINE:'ラインアート',PTCL:'3Dの粒子',SCENE:'引き伸ばす風景',AERIAL:'ドローン空撮',SCAN:'スキャン・構造'};
 AM.series=new Set((LS.get('vjamb.series')||'').split(',').filter(n=>SER[n]));
 function poolOf(t){if(!AM.series.size)return t.pool;const p=[];for(const n of AM.series)p.push(...SER[n]);return p}
 
@@ -6728,7 +6864,12 @@ window.__amForce=(st)=>{const t=curT();S.sel={style:st,motion:0,cam:0};const g=m
 /* ---- 起動 ---- */
 setPerform=function(){};
 document.body.classList.add('perform','am');
-S.onAir=false;S.loop.len=60;
+S.onAir=false;S.loop.len=30;
+// 緩急：ゆったりした時間が多く、ときどき動きが増える（映像の進む速さをなめらかに変える）
+{const hv=i=>{const s=Math.sin(i*127.1+311.7)*43758.5453;return s-Math.floor(s)};
+ const vn=t=>{const i=Math.floor(t),f=t-i,u=f*f*(3-2*f);return hv(i)*(1-u)+hv(i+1)*u};
+ const sst=(a,b,x)=>{x=clamp((x-a)/(b-a),0,1);return x*x*(3-2*x)};
+ const rl=()=>{const t=performance.now()/1000;const n=.6*vn(t/11)+.4*vn(t/4.3+50);window.__AMRATE=.8+1.5*sst(.55,.8,n);requestAnimationFrame(rl)};rl();}
 /* 音反応：OFF／BPM（擬似ビート）／MIC（マイクで実際の音を聞く） */
 AM.snd='off';  // 音反応は使わない（常にOFF）
 const SND_LBL={off:'音反応 OFF',bpm:'音反応 BPM',mic:'音反応 MIC'};
