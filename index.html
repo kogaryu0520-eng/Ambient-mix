@@ -614,6 +614,7 @@ body.am{background:#000;overflow:hidden;-webkit-user-select:none;user-select:non
     <button class="ambtn" id="amTitle">曲名表示 ON</button>
     <button class="ambtn" id="amFs">全画面</button>
     <button class="ambtn" id="amQ">画質 AUTO</button>
+    <button class="ambtn" id="amTouch">タッチ操作 ON</button>
     <button class="ambtn" id="amReact" hidden>音反応 OFF</button>
   </div>
   <h3>SPOTIFY</h3>
@@ -3198,7 +3199,7 @@ const clean=g=>{const {video,src,abort,texMix,shown,status,err,...rest}=g;return
 const VS='attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}';
 const FS=`precision highp float;
 uniform vec2 uRes,uOff;uniform float uT,uL,uSpd,uBpm,uAud,uScenes,uStyle,uMotion,uCam,uDens,uInt,uMetal;
-uniform vec4 uSeed;uniform vec3 uC0,uC1,uC2,uAcc;uniform float uLow,uMid,uHigh,uLvl,uBeat;
+uniform vec4 uSeed;uniform vec4 uTouch;uniform vec3 uC0,uC1,uC2,uAcc;uniform float uLow,uMid,uHigh,uLvl,uBeat;
 uniform sampler2D uTex;uniform float uTexMix;uniform vec3 uCamRot;
 uniform float uKick,uHat,uBassA,uEnergy;uniform vec4 uK;
 float gKick,gHat,gBass,gEng;vec4 KK;
@@ -4416,7 +4417,7 @@ vec3 aFilm(vec3 c,vec2 q,vec2 fc,float cc){
  return clamp(l,0.,1.)*aTint();}
 float aChl(vec2 z,vec4 nm,float s){float PI=3.14159;
  return mix(cos(nm.x*PI*z.x)*cos(nm.y*PI*z.y)-cos(nm.y*PI*z.x)*cos(nm.x*PI*z.y),cos(nm.z*PI*z.x)*cos(nm.w*PI*z.y)-cos(nm.w*PI*z.x)*cos(nm.z*PI*z.y),s);}
-vec3 aCam(vec2 q,vec3 ro,vec3 ta){vec3 ww=normalize(ta-ro),uu=normalize(cross(ww,vec3(0.,1.,0.))),vv=cross(uu,ww);return normalize(q.x*uu+q.y*vv+1.6*ww);}
+vec3 aCam(vec2 q,inout vec3 ro,vec3 ta){vec3 dd=ro-ta;float L=length(dd);dd.xz=rot(uTouch.x)*dd.xz;dd.y+=uTouch.y*L*.7;dd=normalize(dd)*L/max(uTouch.z,.3);ro=ta+dd;vec3 ww=normalize(ta-ro),uu=normalize(cross(ww,vec3(0.,1.,0.))),vv=cross(uu,ww);return normalize(q.x*uu+q.y*vv+1.6*ww);}
 float aPt(vec3 ro,vec3 rd,vec3 pt,float foc){ // soft point: distance from particle to the view ray, with depth-of-field
  vec3 w=pt-ro;float t=dot(w,rd);if(t<.05)return 0.;float d=length(w-rd*t);
  float pr=PX*t/1.6,bl=1.+abs(t-foc)*1.1,r=pr*1.25*bl;
@@ -4553,7 +4554,7 @@ vec3 ptclStyle2(vec2 p,vec2 q,float ps,vec2 fc,float c,float th,float m,vec4 sd)
  }
  return vec3(.016)+clamp(v*1.75,0.,1.6)*vec3(.93)*aTint();}
 // ═════ SCAN (140-144): scaffold line structures · coloured point-cloud scans of nature ═════
-vec3 aPrj(vec3 p,float ang,float D){p.xz=rot(ang)*p.xz;float z=p.z+D;return vec3(p.xy*1.6/max(z,.05),z);}
+vec3 aPrj(vec3 p,float ang,float D){p.xz=rot(ang+uTouch.x)*p.xz;p.yz=rot(uTouch.y*.6)*p.yz;D/=max(uTouch.z,.3);float z=p.z+D;return vec3(p.xy*1.6/max(z,.05),z);}
 vec3 aScaffold(vec2 q,float c,float th,float m,vec4 sd,float dense){
  float D=2.7,ang=th+sd.x*6.,hs=.22,K=24.,s=c*m*K*hs;   // rises 24 levels per loop, content repeats every 24 levels: loop-exact
  float yw=q.y*D/1.6+s,L0=floor(yw/hs),ink=0.,dot2=0.;
@@ -4668,6 +4669,7 @@ void main(){
   else if(C==4){float r=length(p)+.001;q=vec2(atan(p.y,p.x)/TAU*2.,.22/r-.5);}
   q=rot(uCamRot.z+uCamRot.x*.5)*q;q*=1.+.35*sin(uCamRot.y);
  }
+ if(!((S>=120&&S<130)||S>=140)){q=rot(uTouch.x*.7)*q;q/=max(uTouch.z,.2);q.y+=uTouch.y*.15;}
  q*=uDens;
  vec3 W=vec3(.93);vec3 col=vec3(0.);
  PX*=uDens*(C==2?.55:(C==3?1.7:1.));
@@ -4978,7 +4980,7 @@ function makeGL(canvas,alpha,post){
   if(!gl) return null;
   const R={gl,canvas,tex:new WeakMap(),post:false};
   R.buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,R.buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
-  R.scene=compile(gl,FS,['uRes','uOff','uT','uL','uSpd','uBpm','uAud','uScenes','uStyle','uMotion','uCam','uDens','uInt','uMetal','uSeed','uC0','uC1','uC2','uAcc','uLow','uMid','uHigh','uLvl','uBeat','uTex','uTexMix','uCamRot','uCamT','uAtlas','uCamSrc','uCamFx','uCamMix','uCamLive','uFrames','uSmpDur','uCamAsp','uFlipX','uKick','uHat','uBassA','uEnergy','uK']);
+  R.scene=compile(gl,FS,['uTouch','uRes','uOff','uT','uL','uSpd','uBpm','uAud','uScenes','uStyle','uMotion','uCam','uDens','uInt','uMetal','uSeed','uC0','uC1','uC2','uAcc','uLow','uMid','uHigh','uLvl','uBeat','uTex','uTexMix','uCamRot','uCamT','uAtlas','uCamSrc','uCamFx','uCamMix','uCamLive','uFrames','uSmpDur','uCamAsp','uFlipX','uKick','uHat','uBassA','uEnergy','uK']);
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
   useP(R,R.scene);gl.uniform1i(R.scene.U.uTex,0);gl.uniform1i(R.scene.U.uCamT,3);gl.uniform1i(R.scene.U.uAtlas,4);
   if(post){
@@ -5022,7 +5024,7 @@ function drawG0(R,g,x,y,w,h,uploadVideo,force,aud){
   gl.uniform3fv(U.uAcc,g.sat<.12?[.93,.93,.93]:hsl(g.hue,Math.min(1,g.sat),.55*g.light));
   gl.uniform1f(U.uStyle,g.style);gl.uniform1f(U.uMotion,g.motion);gl.uniform1f(U.uCam,g.cam);
   gl.uniform1f(U.uDens,g.dens);gl.uniform1f(U.uInt,g.intensity);gl.uniform1f(U.uMetal,g.metal);
-  gl.uniform4f(U.uSeed,g.seed[0],g.seed[1],g.seed[2],g.seed[3]);
+  gl.uniform4f(U.uSeed,g.seed[0],g.seed[1],g.seed[2],g.seed[3]);if(U.uTouch){const T=window.__AMT||[0,0,1,0];gl.uniform4f(U.uTouch,T[0],T[1],T[2],T[3])}
   const cr=camAt(g);if(aud&&(g.style===1||(g.style>=10&&g.style<20)||g.style===35||g.style===36)){const tt=g.lt||0,bs=(aud.bass||0)*S.react.gain;cr[0]+=bs*.07*Math.sin(tt*1.3);cr[1]+=bs*.05*Math.sin(tt*.9+1.)}gl.uniform3f(U.uCamRot,cr[0],cr[1],cr[2]);
   camUniforms(R,U,uploadVideo);
   const [c0,c1,c2]=palette(g);gl.uniform3fv(U.uC0,c0);gl.uniform3fv(U.uC1,c1);gl.uniform3fv(U.uC2,c2);
@@ -6788,21 +6790,43 @@ const panel=$('amPanel');let hideT=0;
 function panelOn(on){panel.classList.toggle('on',on);panel.setAttribute('aria-hidden',on?'false':'true');clearTimeout(hideT);if(on)hideT=setTimeout(()=>panelOn(false),9000)}
 panel.addEventListener('pointerdown',()=>{clearTimeout(hideT);hideT=setTimeout(()=>panelOn(false),9000)});
 panel.addEventListener('input',()=>{clearTimeout(hideT);hideT=setTimeout(()=>panelOn(false),20000)});
-// 下から上へスワイプ＝メニューを開く ／ ダブルタップ＝次の映像（マークは出さない）／ メニューが開いているときのタップ＝閉じる
-const tapEl=$('amTap');let ptr=null,lastTap={t:0,x:0,y:0};
-tapEl.addEventListener('pointerdown',e=>{ptr={x:e.clientX,y:e.clientY,t:performance.now(),id:e.pointerId};try{tapEl.setPointerCapture(e.pointerId)}catch(_){}});
-tapEl.addEventListener('pointerup',e=>{
-  if(!ptr||e.pointerId!==ptr.id)return;const dx=e.clientX-ptr.x,dy=e.clientY-ptr.y,dt=performance.now()-ptr.t;ptr=null;
+// 画面の操作：1本指ドラッグ＝カメラを回す ／ ピンチ＝ズーム ／ ダブルタップ＝次の映像
+// 画面の下の方から上へスワイプ＝メニュー ／ メニューが開いているときのタップ＝閉じる
+const tapEl=$('amTap');let lastTap={t:0,x:0,y:0};const pts=new Map();
+const TC={on:LS.get('vjamb.touch')!=='0',yaw:0,pitch:0,zoom:1,vy:0,vp:0,last:0,pinch:0,mode:''};
+window.__AMT=[0,0,1,0];
+function tcUI(){$('amTouch').textContent='タッチ操作 '+(TC.on?'ON':'OFF')}
+tapEl.addEventListener('pointerdown',e=>{try{tapEl.setPointerCapture(e.pointerId)}catch(_){}
+  pts.set(e.pointerId,{x:e.clientX,y:e.clientY,x0:e.clientX,y0:e.clientY,t:performance.now()});
+  if(pts.size===1){TC.mode=(e.clientY>innerHeight*.72)?'edge':'';TC.vy=TC.vp=0}
+  if(pts.size===2){const [a,b]=[...pts.values()];TC.pinch=Math.hypot(a.x-b.x,a.y-b.y);TC.mode='pinch'}});
+tapEl.addEventListener('pointermove',e=>{const p=pts.get(e.pointerId);if(!p)return;const dx=e.clientX-p.x,dy=e.clientY-p.y,now=performance.now(),mdt=Math.max((now-(p.mt||now-16))/1000,.008);p.mt=now;p.x=e.clientX;p.y=e.clientY;
+  if(!TC.on||panel.classList.contains('on'))return;
+  if(pts.size===2&&TC.mode==='pinch'){const [a,b]=[...pts.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);if(TC.pinch>0)TC.zoom=clamp(TC.zoom*d/TC.pinch,.5,2.6);TC.pinch=d;TC.last=performance.now();return}
+  if(pts.size!==1||TC.mode==='edge')return;
+  if(TC.mode===''&&Math.hypot(e.clientX-p.x0,e.clientY-p.y0)>12)TC.mode='drag';
+  if(TC.mode==='drag'){const k=3/Math.max(innerWidth,1);TC.yaw+=dx*k;TC.pitch=clamp(TC.pitch+dy*k,-1.1,1.1);TC.vy=clamp(TC.vy*.5+.5*dx*k/mdt,-5,5);TC.vp=clamp(TC.vp*.5+.5*dy*k/mdt,-3,3);TC.last=performance.now()}});
+const ptrEnd=e=>{const p=pts.get(e.pointerId);if(!p)return;pts.delete(e.pointerId);
+  const dx=e.clientX-p.x0,dy=e.clientY-p.y0,dt=performance.now()-p.t,mode=TC.mode;if(pts.size===0)TC.mode='';
+  if(mode==='pinch'||mode==='drag')return;
   wake();if(A.ctx&&A.ctx.state==='suspended')A.ctx.resume();
-  if(dy<-50&&Math.abs(dy)>Math.abs(dx)*1.3){panelOn(true);lastTap.t=0;return}          // 上へスワイプ
-  if(dy>50&&Math.abs(dy)>Math.abs(dx)*1.3){panelOn(false);lastTap.t=0;return}          // 下へスワイプ
-  if(Math.hypot(dx,dy)>14||dt>400)return;                                              // タップではない
+  if(dy<-50&&Math.abs(dy)>Math.abs(dx)*1.3&&(mode==='edge'||!TC.on)){panelOn(true);lastTap.t=0;return}   // 下の方から上へスワイプ
+  if(dy>50&&Math.abs(dy)>Math.abs(dx)*1.3){panelOn(false);lastTap.t=0;return}
+  if(Math.hypot(dx,dy)>14||dt>400)return;
   const n=performance.now();
   if(n-lastTap.t<320&&Math.hypot(e.clientX-lastTap.x,e.clientY-lastTap.y)<60){lastTap.t=0;doSwitch('track',null);return}
   lastTap={t:n,x:e.clientX,y:e.clientY};
-  if(panel.classList.contains('on'))panelOn(false);
-});
-tapEl.addEventListener('pointercancel',()=>{ptr=null});
+  if(panel.classList.contains('on'))panelOn(false);};
+tapEl.addEventListener('pointerup',ptrEnd);
+tapEl.addEventListener('pointercancel',e=>{pts.delete(e.pointerId);if(!pts.size)TC.mode=''});
+tapEl.addEventListener('wheel',e=>{if(!TC.on)return;e.preventDefault();TC.zoom=clamp(TC.zoom*Math.exp(-e.deltaY*.0015),.5,2.6);TC.last=performance.now()},{passive:false});
+// 指を離したら慣性で少し流れ、3秒ほどで自動のカメラワークへゆっくり戻る
+{let lt=performance.now();const step=t=>{const dt=Math.min(.1,(t-lt)/1000);lt=t;
+  if(!pts.size||TC.mode!=='drag'){TC.yaw+=TC.vy*dt;TC.pitch=clamp(TC.pitch+TC.vp*dt,-1.1,1.1);TC.vy*=Math.exp(-dt*3);TC.vp*=Math.exp(-dt*3);
+   if(!pts.size&&t-TC.last>3000){const k=1-Math.exp(-dt*1.3);TC.yaw-=TC.yaw*k;TC.pitch-=TC.pitch*k;TC.zoom+=(1-TC.zoom)*k}}
+  if(!TC.on){TC.yaw=TC.pitch=0;TC.zoom=1}
+  window.__AMT=[TC.yaw,TC.pitch,TC.zoom,pts.size?1:0];requestAnimationFrame(step)};requestAnimationFrame(step);}
+$('amTouch').onclick=()=>{TC.on=!TC.on;LS.set('vjamb.touch',TC.on?'1':'0');tcUI()};tcUI();
 // メニューは下へスワイプでも閉じる（一番上までスクロールしているとき）
 {let ts=null;panel.addEventListener('touchstart',e=>{const t=e.touches[0];ts={y:t.clientY,top:panel.scrollTop}},{passive:true});
  panel.addEventListener('touchend',e=>{if(!ts)return;const t=e.changedTouches[0];if(ts.top<=0&&panel.scrollTop<=0&&t.clientY-ts.y>70)panelOn(false);ts=null},{passive:true});}
@@ -6889,7 +6913,7 @@ setBpm(+(LS.get('vjamb.bpm')||124)||124);
 setSnd(AM.snd,true);
 SP.cid=LS.get('vjamb.cid')||'';SP.rt=LS.get('vjamb.rt')||'';$('amCid').value=SP.cid;
 tplUI();doSwitch('track',null);S.fv=S.live;S.xf.anim=null;
-{const h=$('amHint');h.textContent='下から上へスワイプでメニュー ／ ダブルタップで次の映像';h.classList.add('on');setTimeout(()=>h.classList.remove('on'),3000)}
+{const h=$('amHint');h.textContent='下の方から上へスワイプでメニュー ／ ドラッグで回す ／ ダブルタップで次へ';h.classList.add('on');setTimeout(()=>h.classList.remove('on'),3000)}
 spUI();
 spCallback().then(()=>{spUI();if(SP.rt)spPoll()});
 }
