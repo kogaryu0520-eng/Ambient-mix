@@ -2994,9 +2994,9 @@ const lerp=(a,b,t)=>a+(b-a)*t;
 const rnd=Math.random;
 
 /* ───────────── templates ───────────── */
-const STYLES=['FLUX','STRUCTURE','READOUT','PANORAMA','ECLIPSE','BARCODE','SCATTER','SEQUENCE','THERMAL','RADIAL','NEBULA','GALAXY','LATTICE','STREAM','SWARM','SHELL','TORUS','RAIN','WAVEFIELD','BURST','CONCRETE','ARCS','INK','RIPPLE','TRANSIT','PAVING','SURFACE','BUBBLES','FOAM','INSET','STRAND','TRUCHET','SPIRO','POLYGON','FACET','SOLID','TERRAIN','TUBE','MOIRE','RINGS','CODE','','','','','','','','','','ATLAS','SURVEY','FAN','ORBIT','COAST','QUADTREE','CELLS','NIGHT','FIELD','SCAN','SCOPE','DOTWAVE','STACK','SUNSET','PASTEL','RIDGE','NEST','NESTGRID','DIAMOND','TWIST','BLOB','GLYPH','GLYPHFORM','MESH','FLARE','ORB','DUNE','CHROME','SMEAR','TYPE','LEDWALL','ARCBARS','HEXTUNNEL','HEXCIRCUIT','BEAMS','SCRATCH','LISSAJOUS','VSPHERE','PIXELEYE','DASHRING','ACID','ACIDMIRROR','OILCELL','FIBER','FIBERRING','MEMBRANE','GLOWBLOB','SMOKE','DUSTRING','CAUSTIC','WATER','DEW','FROST','FOG','DUNE','CLOUDS','CORONA','PLANET','RAINGLASS','VEINS','CHLADNI','INTERFERENCE','STRINGS','HARMONOGRAPH','FIELD','PHASE','TOPO','TIDE','ORBITS','BEAT','SPHERE','WAVEFIELD','DISC','RINGWORLD','CLOUD','DRIFT','TORUSPT','SHELLS','LATTICE','RAINFALL','STRETCH','STRETCHWIDE','STRETCHSWEEP','STRETCHMIST','STRETCHSEA','DRONEMOUNT','DRONEFOREST','DRONECITY','DRONECOAST','','SCAFFOLD','TANGLE','SCANGORGE','SCANFOREST','SCANBOULDER'];
+const STYLES=['FLUX','STRUCTURE','READOUT','PANORAMA','ECLIPSE','BARCODE','SCATTER','SEQUENCE','THERMAL','RADIAL','NEBULA','GALAXY','LATTICE','STREAM','SWARM','SHELL','TORUS','RAIN','WAVEFIELD','BURST','CONCRETE','ARCS','INK','RIPPLE','TRANSIT','PAVING','SURFACE','BUBBLES','FOAM','INSET','STRAND','TRUCHET','SPIRO','POLYGON','FACET','SOLID','TERRAIN','TUBE','MOIRE','RINGS','CODE','','','','','','','','','','ATLAS','SURVEY','FAN','ORBIT','COAST','QUADTREE','CELLS','NIGHT','FIELD','SCAN','SCOPE','DOTWAVE','STACK','SUNSET','PASTEL','RIDGE','NEST','NESTGRID','DIAMOND','TWIST','BLOB','GLYPH','GLYPHFORM','MESH','FLARE','ORB','DUNE','CHROME','SMEAR','TYPE','LEDWALL','ARCBARS','HEXTUNNEL','HEXCIRCUIT','BEAMS','SCRATCH','LISSAJOUS','VSPHERE','PIXELEYE','DASHRING','ACID','ACIDMIRROR','OILCELL','FIBER','FIBERRING','MEMBRANE','GLOWBLOB','SMOKE','DUSTRING','CAUSTIC','WATER','DEW','FROST','FOG','DUNE','CLOUDS','CORONA','PLANET','RAINGLASS','VEINS','CHLADNI','INTERFERENCE','STRINGS','HARMONOGRAPH','FIELD','PHASE','TOPO','TIDE','ORBITS','BEAT','SPHERE','WAVEFIELD','DISC','RINGWORLD','CLOUD','DRIFT','TORUSPT','SHELLS','LATTICE','RAINFALL','STRETCH','STRETCHWIDE','STRETCHSWEEP','STRETCHMIST','STRETCHSEA','WIREMOUNT','WIREVALLEY','WIRECITY','WIRECOAST','WIRECANYON','SCAFFOLD','TANGLE','SCANGORGE','SCANFOREST','SCANBOULDER'];
 const CODE_STYLE=40;
-const STYLE_JP=['収束する線','3Dデータ構造','数値パネル','星雲パノラマ','天体の満ち欠け','バーコード','点群プロット','塩基配列','熱分布マップ','放射ファイバー','粒子の雲','渦巻銀河','格子点と座標軸','粒子の流れ','群れ','球殻','トーラス','落ちる粒子','粒子の波面','爆発の波','壁と白い弧','弧と反射','白黒の液体','液体の波紋','夜の移動','石畳','水面','水中の泡','雲と泡','小窓','伸び続ける線','伸び続ける迷路','描き続ける曲線','多角形の無限ズーム','ローポリの面','3D多面体','ワイヤー地形','ワイヤートンネル','メッシュのモアレ','同心円の干渉','p5.js コード','','','','','','','','','','衛星写真の断片','三角測量の線','収束する線の束','円と補助線','海岸線と集落','四分木グリッド','光るセル','夜の街明かり','昼の農地と道','セルに地図が出る','重なる波形','点でできた波','編まれた波の段','夕焼けと波','パステルと波','稜線の重なり','回る入れ子の四角','四角のタイル','菱形の入れ子','ねじれる四角','つやのある球体','文字のモザイク','文字でできた形','ワイヤーのチューブ','横に伸びる光','山の上の光球','夕暮れの草原','液体クローム','横に流れるノイズ','大きな文字の組版','カーブしたLEDの壁','弧を描く光のバー','六角形のトンネル','六角タイルと回路','縦の光線とちり','フィルムの傷と光漏れ','オシロのリサージュ','ベクターの球と軌道','ピクセルの目','破線のリング','液体アシッド','鏡合わせの液体','油の泡','繊維の殻','繊維のリング','膜と等高線','光る塊','ぼやけた光の煙','散る粒子のリング','水底の光の網','水面のきらめき','水滴のマクロ','霜の結晶','霧と遠い灯り','砂丘の風紋','見上げた雲','皆既日食のコロナ','惑星の夜明け','窓の雨粒','葉脈の逆光','クラドニ図形','波の干渉の等高線','弦の倍音','ハーモノグラフ','磁力線','位相空間','地形の等高線','海面の線','軌道','うなり','点でできた球','点の波面','点の円盤銀河','点の惑星と環','点の雲','漂うちり','点のトーラス','入れ子の球殻','結晶格子','降る雨','横に引き伸ばされる風景','左右に流れる地平線','引き伸ばしが横切る湖','霧の山並みの引き伸ばし','海と夕日の引き伸ばし','山岳の空撮','森の空撮','都市の空撮','海岸の空撮','','足場のワイヤー構造','絡まる糸の柱','点群スキャン：滝の渓谷','点群スキャン：森','点群スキャン：岩場'];
+const STYLE_JP=['収束する線','3Dデータ構造','数値パネル','星雲パノラマ','天体の満ち欠け','バーコード','点群プロット','塩基配列','熱分布マップ','放射ファイバー','粒子の雲','渦巻銀河','格子点と座標軸','粒子の流れ','群れ','球殻','トーラス','落ちる粒子','粒子の波面','爆発の波','壁と白い弧','弧と反射','白黒の液体','液体の波紋','夜の移動','石畳','水面','水中の泡','雲と泡','小窓','伸び続ける線','伸び続ける迷路','描き続ける曲線','多角形の無限ズーム','ローポリの面','3D多面体','ワイヤー地形','ワイヤートンネル','メッシュのモアレ','同心円の干渉','p5.js コード','','','','','','','','','','衛星写真の断片','三角測量の線','収束する線の束','円と補助線','海岸線と集落','四分木グリッド','光るセル','夜の街明かり','昼の農地と道','セルに地図が出る','重なる波形','点でできた波','編まれた波の段','夕焼けと波','パステルと波','稜線の重なり','回る入れ子の四角','四角のタイル','菱形の入れ子','ねじれる四角','つやのある球体','文字のモザイク','文字でできた形','ワイヤーのチューブ','横に伸びる光','山の上の光球','夕暮れの草原','液体クローム','横に流れるノイズ','大きな文字の組版','カーブしたLEDの壁','弧を描く光のバー','六角形のトンネル','六角タイルと回路','縦の光線とちり','フィルムの傷と光漏れ','オシロのリサージュ','ベクターの球と軌道','ピクセルの目','破線のリング','液体アシッド','鏡合わせの液体','油の泡','繊維の殻','繊維のリング','膜と等高線','光る塊','ぼやけた光の煙','散る粒子のリング','水底の光の網','水面のきらめき','水滴のマクロ','霜の結晶','霧と遠い灯り','砂丘の風紋','見上げた雲','皆既日食のコロナ','惑星の夜明け','窓の雨粒','葉脈の逆光','クラドニ図形','波の干渉の等高線','弦の倍音','ハーモノグラフ','磁力線','位相空間','地形の等高線','海面の線','軌道','うなり','点でできた球','点の波面','点の円盤銀河','点の惑星と環','点の雲','漂うちり','点のトーラス','入れ子の球殻','結晶格子','降る雨','横に引き伸ばされる風景','左右に流れる地平線','引き伸ばしが横切る湖','霧の山並みの引き伸ばし','海と夕日の引き伸ばし','ワイヤーの山岳空撮','ワイヤーの谷空撮','ワイヤーの都市空撮','ワイヤーの海岸空撮','ワイヤーの峡谷空撮','足場のワイヤー構造','絡まる糸の柱','点群スキャン：滝の渓谷','点群スキャン：森','点群スキャン：岩場'];
 const MOTIONS=['SLOW','PULSE','ROTATE','ZOOM','FLOW','GLITCH'];
 const CAMS=['STATIC','FLY','MACRO','WIDE','TUNNEL'];
 const STYLE_P={'FLUX':'monochrome data art, hundreds of thin white lines converging to a vanishing point, binary data blocks streaming along the lines, LED wall',
@@ -3069,7 +3069,7 @@ const STYLE_P={'FLUX':'monochrome data art, hundreds of thin white lines converg
 'DUNE':'dusk landscape, layered hills and swaying grass silhouettes against an orange sky',
 'CHROME':'liquid chrome sphere morphing, studio reflections, dark background',
 'SMEAR':'horizontal pixel smear glitch of blue, violet and pink colour fields',
-'TYPE':'large blocky glyph collage on a multi-scale grid, black, white and blue','LEDWALL':'curved LED wall panorama with pixel shapes and floor reflection','ARCBARS':'stacked curved bars of white light scrolling','HEXTUNNEL':'infinite hexagonal wireframe tunnel','HEXCIRCUIT':'nested hexagon tiles over glowing circuit traces','BEAMS':'vertical light beams with dust and film scratches','SCRATCH':'film light leak with flickering scratches','LISSAJOUS':'green phosphor oscilloscope lissajous figure','VSPHERE':'green vector sphere with orbit ellipses','PIXELEYE':'big pixel mosaic of an eye','DASHRING':'barcode ring of radial dashes','ACID':'psychedelic liquid acid flow','ACIDMIRROR':'mirrored kaleidoscopic liquid','OILCELL':'oil bubbles with bright rims','FIBER':'shell made of glowing hair-like fibres','FIBERRING':'ring and cylinder of glowing fibres','MEMBRANE':'blob membrane with topographic mesh','GLOWBLOB':'soft glowing blob with dithered edge','SMOKE':'blurred drifting light shapes','DUSTRING':'particles drifting off a ring','CAUSTIC':'caustic light network on a pool floor','WATER':'ambient water','DEW':'ambient dew','FROST':'ambient frost','FOG':'ambient fog','DUNE':'ambient dune','CLOUDS':'ambient clouds','CORONA':'ambient corona','PLANET':'ambient planet','RAINGLASS':'ambient rainglass','VEINS':'ambient veins','CHLADNI':'ambient chladni','INTERFERENCE':'ambient interference','STRINGS':'ambient strings','HARMONOGRAPH':'ambient harmonograph','FIELD':'ambient field','PHASE':'ambient phase','TOPO':'ambient topo','TIDE':'ambient tide','ORBITS':'ambient orbits','BEAT':'ambient beat','SPHERE':'ambient sphere','WAVEFIELD':'ambient wavefield','DISC':'ambient disc','RINGWORLD':'ambient ringworld','CLOUD':'ambient cloud','DRIFT':'ambient drift','TORUSPT':'ambient toruspt','SHELLS':'ambient shells','LATTICE':'ambient lattice','RAINFALL':'ambient rainfall','STRETCH':'ambient stretch','STRETCHWIDE':'ambient stretchwide','STRETCHSWEEP':'ambient stretchsweep','STRETCHMIST':'ambient stretchmist','STRETCHSEA':'ambient stretchsea','DRONEMOUNT':'ambient dronemount','DRONEFOREST':'ambient droneforest','DRONECITY':'ambient dronecity','DRONECOAST':'ambient dronecoast','':'ambient ','SCAFFOLD':'ambient scaffold','TANGLE':'ambient tangle','SCANGORGE':'ambient scangorge','SCANFOREST':'ambient scanforest','SCANBOULDER':'ambient scanboulder'};
+'TYPE':'large blocky glyph collage on a multi-scale grid, black, white and blue','LEDWALL':'curved LED wall panorama with pixel shapes and floor reflection','ARCBARS':'stacked curved bars of white light scrolling','HEXTUNNEL':'infinite hexagonal wireframe tunnel','HEXCIRCUIT':'nested hexagon tiles over glowing circuit traces','BEAMS':'vertical light beams with dust and film scratches','SCRATCH':'film light leak with flickering scratches','LISSAJOUS':'green phosphor oscilloscope lissajous figure','VSPHERE':'green vector sphere with orbit ellipses','PIXELEYE':'big pixel mosaic of an eye','DASHRING':'barcode ring of radial dashes','ACID':'psychedelic liquid acid flow','ACIDMIRROR':'mirrored kaleidoscopic liquid','OILCELL':'oil bubbles with bright rims','FIBER':'shell made of glowing hair-like fibres','FIBERRING':'ring and cylinder of glowing fibres','MEMBRANE':'blob membrane with topographic mesh','GLOWBLOB':'soft glowing blob with dithered edge','SMOKE':'blurred drifting light shapes','DUSTRING':'particles drifting off a ring','CAUSTIC':'caustic light network on a pool floor','WATER':'ambient water','DEW':'ambient dew','FROST':'ambient frost','FOG':'ambient fog','DUNE':'ambient dune','CLOUDS':'ambient clouds','CORONA':'ambient corona','PLANET':'ambient planet','RAINGLASS':'ambient rainglass','VEINS':'ambient veins','CHLADNI':'ambient chladni','INTERFERENCE':'ambient interference','STRINGS':'ambient strings','HARMONOGRAPH':'ambient harmonograph','FIELD':'ambient field','PHASE':'ambient phase','TOPO':'ambient topo','TIDE':'ambient tide','ORBITS':'ambient orbits','BEAT':'ambient beat','SPHERE':'ambient sphere','WAVEFIELD':'ambient wavefield','DISC':'ambient disc','RINGWORLD':'ambient ringworld','CLOUD':'ambient cloud','DRIFT':'ambient drift','TORUSPT':'ambient toruspt','SHELLS':'ambient shells','LATTICE':'ambient lattice','RAINFALL':'ambient rainfall','STRETCH':'ambient stretch','STRETCHWIDE':'ambient stretchwide','STRETCHSWEEP':'ambient stretchsweep','STRETCHMIST':'ambient stretchmist','STRETCHSEA':'ambient stretchsea','WIREMOUNT':'ambient wiremount','WIREVALLEY':'ambient wirevalley','WIRECITY':'ambient wirecity','WIRECOAST':'ambient wirecoast','WIRECANYON':'ambient wirecanyon','SCAFFOLD':'ambient scaffold','TANGLE':'ambient tangle','SCANGORGE':'ambient scangorge','SCANFOREST':'ambient scanforest','SCANBOULDER':'ambient scanboulder'};
 const MOTION_P={SLOW:'slow drifting motion',PULSE:'rhythmic pulsation synced to the beat',ROTATE:'continuous rotation',ZOOM:'infinite zoom',FLOW:'smooth fluid flow',GLITCH:'digital glitch bursts, datamosh'};
 const CAM_P={STATIC:'locked-off static camera',FLY:'low fly-through camera over the surface',MACRO:'extreme macro close-up, shallow depth of field',WIDE:'ultra wide view',TUNNEL:'infinite tunnel movement'};
 const SUFFIX='seamless loop, VJ visual, high contrast, crisp sharp detail, high resolution, dark background, 16:9, no text, no watermark';
@@ -4342,8 +4342,8 @@ float aTer(vec2 xz,float P,float H){return pow(fbmT(xz*.25,vec2(1e4,P*.25)),1.6)
 vec3 aSkyC(vec3 rd,vec3 sun,float warm){vec3 c=mix(vec3(.75,.8,.86),vec3(.32,.45,.66),smoothstep(0.,.5,rd.y));c=mix(c,vec3(1.,.82,.62),warm*exp(-max(rd.y,0.)*6.));
  return c+vec3(1.,.9,.75)*pow(max(dot(rd,sun),0.),60.)*.8;}
 vec3 aFly(vec2 q,float c,float th,vec4 sd,float kind,float dig){
- float P=48.,z0=c*P;                                   // one terrain period flown per loop
- vec3 ro=vec3(1.5*sin(th),kind<.5?6.6:(kind<1.5?4.5:(kind<2.5?9.:3.2)),z0);
+ float P=48.,z0=c*P*2.;                                // two terrain periods flown per loop
+ vec3 ro=vec3(1.5*sin(th),kind<.5?6.6:(kind<1.5?4.5:(kind<2.5?6.5:3.2)),z0);
  vec3 rd=normalize(vec3(q.x,q.y-.32,1.5));rd.xy=rot(.05*sin(th))*rd.xy;rd.xz=rot(.07*cos(th))*rd.xz;
  vec3 sun=normalize(vec3(-.5,.35,.75));float warm=kind>2.5?1.:.35;
  vec3 col=aSkyC(rd,sun,warm);
@@ -4405,7 +4405,7 @@ vec3 sceneStyle(vec2 p,vec2 q,float ss,vec2 fc,float c,float th,float m,vec4 sd)
   if((kind>1.5&&q.x>xs)||(kind<1.5&&q.x<xs))col*=.9+.1*row;
   return aGrainC(col,q,fc,c);}
  // DRONE — mountains / forest / city / coast
- float k=ss-5.;return aGrainC(k>1.5&&k<2.5?aFly(q,c,th,sd,k,dig):aFly2(q,c,th,sd,k,dig),q,fc,c);}
+ return aGrainC(aLand(q,sd,th),q,fc,c);}
 // ═════ AMBIENT v2 (100-129): FILM (実写の質感) · LINE (ラインアート) · PARTICLE (3Dの粒子) — installation, monochrome, slow ═════
 vec3 aMono(vec3 c,float k){return vec3(clamp(dot(c,vec3(.299,.587,.114))*k,0.,1.));}
 vec3 aTint(){return mix(vec3(1.),normalize(uAcc+.001)*1.732,.14);}
@@ -6552,7 +6552,7 @@ refill();lkBoot();codeBoot();
 const AM={tpl:0,cur:null,bpm:124,title:true,pend:null,lastSwitchBeat:-999,fxOffAt:-1,
   sp:{cid:'',at:'',rt:'',exp:0,track:null,playing:false,pollT:0,backoff:0,err:''}};
 const range=(a,b)=>{const o=[];for(let i=a;i<=b;i++)o.push(i);return o};
-const SER={FILM:range(100,109).filter(x=>x!==102),LINE:range(110,119),PTCL:range(120,129),SCENE:range(130,134),AERIAL:range(135,138),SCAN:range(140,144)};
+const SER={FILM:range(100,109).filter(x=>x!==102),LINE:range(110,119),PTCL:range(120,129),SCENE:range(130,134),SCAN:range(140,144)};
 window.__AMCALM={low:.35,mid:.45,high:.25,lvl:.6,beat:0,kick:0,hat:0,bass:.35,energy:.6};
 const GRADE0={hue:0,sat:100,con:100,exp:0,bloom:0,tintAmt:0,tintHue:200,inv:false,mono:false,flash:false};
 /* テンプレート：
@@ -6561,11 +6561,11 @@ const GRADE0={hue:0,sat:100,con:100,exp:0,bloom:0,tintAmt:0,tintHue:200,inv:fals
    pal=色の決め方 / cam=360°カメラ / grade=色補正 / fx=拍でFXを打つ */
 const palMono=r=>({hue:r(),sat:0,spread:.05});
 const palTint=r=>({hue:[.07,.1,.13,.52,.56,.6][Math.floor(r()*6)],sat:.18+r()*.2,spread:.05});
-const ALL=[...SER.FILM,...SER.LINE,...SER.PTCL,...SER.SCENE,...SER.AERIAL,...SER.SCAN];
+const ALL=[...SER.FILM,...SER.LINE,...SER.PTCL,...SER.SCENE,...SER.SCAN];
 const TPL=[
  {n:'GALLERY',jp:'白黒・静かな展示',pool:ALL,motions:[0],cams:[0],x:'fade',xb:64,scene:64,mut:.15,track:96,
   pal:palMono,cam:{mode:'drift',range:20,speed:35,every:8},camW:{off:.7,drift:.3},grade:{con:100}},
- {n:'FILM',jp:'実写の質感・粒子感',pool:[...SER.FILM,...SER.SCENE,...SER.AERIAL],motions:[0,0,3],cams:[0,0,2],x:'fade',xb:32,scene:32,mut:.2,track:64,
+ {n:'FILM',jp:'実写の質感・粒子感',pool:[...SER.FILM,...SER.SCENE],motions:[0,0,3],cams:[0,0,2],x:'fade',xb:32,scene:32,mut:.2,track:64,
   pal:r=>(r()<.6?palMono:palTint)(r),cam:{mode:'drift',range:20,speed:35,every:8},camW:{off:.6,drift:.4},grade:{con:102}},
  {n:'LINE',jp:'ラインアート・図版',pool:SER.LINE,motions:[0],cams:[0],x:'fade',xb:16,scene:16,mut:.3,track:48,
   pal:palMono,cam:{mode:'drift',range:15,speed:35,every:8},camW:{off:.8,drift:.2},grade:{con:100}},
@@ -6573,8 +6573,6 @@ const TPL=[
   pal:palMono,cam:{mode:'drift',range:15,speed:35,every:8},camW:{off:.7,drift:.3},grade:{bloom:20}},
  {n:'STRETCH',jp:'引き伸ばされる風景',pool:SER.SCENE,motions:[0],cams:[0],x:'fade',xb:32,scene:48,mut:.2,track:64,
   pal:palTint,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:15}},
- {n:'AERIAL',jp:'ドローンの空撮・前進',pool:SER.AERIAL,motions:[0],cams:[0],x:'fade',xb:32,scene:64,mut:.15,track:64,
-  pal:palTint,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:10}},
  {n:'SCAN',jp:'点群スキャン・ワイヤー構造',pool:SER.SCAN,motions:[0],cams:[0],x:'dissolve',xb:24,scene:32,mut:.2,track:64,
   pal:palMono,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:12}},
  {n:'DEEP CALM',jp:'とても長いフェード・淡い色味',pool:ALL,motions:[0],cams:[0],x:'fade',xb:64,scene:96,mut:.12,track:128,
@@ -6594,7 +6592,7 @@ function applyLook(t){
 }
 function curT(){return AM.cur||TPL[AM.tpl]}
 /* 映像の種類（元アプリのタブ）。何も選ばない＝AUTO（テンプレートのおすすめ） */
-const SER_JP={FILM:'実写の質感',LINE:'ラインアート',PTCL:'3Dの粒子',SCENE:'引き伸ばす風景',AERIAL:'ドローン空撮',SCAN:'スキャン・構造'};
+const SER_JP={FILM:'実写の質感',LINE:'ラインアート',PTCL:'3Dの粒子',SCENE:'引き伸ばす風景',SCAN:'スキャン・構造'};
 AM.series=new Set((LS.get('vjamb.series')||'').split(',').filter(n=>SER[n]));
 function poolOf(t){if(!AM.series.size)return t.pool;const p=[];for(const n of AM.series)p.push(...SER[n]);return p}
 
