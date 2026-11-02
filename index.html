@@ -2995,9 +2995,9 @@ const lerp=(a,b,t)=>a+(b-a)*t;
 const rnd=Math.random;
 
 /* ───────────── templates ───────────── */
-const STYLES=['FLUX','STRUCTURE','READOUT','PANORAMA','ECLIPSE','BARCODE','SCATTER','SEQUENCE','THERMAL','RADIAL','NEBULA','GALAXY','LATTICE','STREAM','SWARM','SHELL','TORUS','RAIN','WAVEFIELD','BURST','CONCRETE','ARCS','INK','RIPPLE','TRANSIT','PAVING','SURFACE','BUBBLES','FOAM','INSET','STRAND','TRUCHET','SPIRO','POLYGON','FACET','SOLID','TERRAIN','TUBE','MOIRE','RINGS','CODE','','','','','','','','','','ATLAS','SURVEY','FAN','ORBIT','COAST','QUADTREE','CELLS','NIGHT','FIELD','SCAN','SCOPE','DOTWAVE','STACK','SUNSET','PASTEL','RIDGE','NEST','NESTGRID','DIAMOND','TWIST','BLOB','GLYPH','GLYPHFORM','MESH','FLARE','ORB','DUNE','CHROME','SMEAR','TYPE','LEDWALL','ARCBARS','HEXTUNNEL','HEXCIRCUIT','BEAMS','SCRATCH','LISSAJOUS','VSPHERE','PIXELEYE','DASHRING','ACID','ACIDMIRROR','OILCELL','FIBER','FIBERRING','MEMBRANE','GLOWBLOB','SMOKE','DUSTRING','CAUSTIC','WATER','DEW','FROST','FOG','DUNE','CLOUDS','CORONA','PLANET','RAINGLASS','VEINS','CHLADNI','INTERFERENCE','STRINGS','HARMONOGRAPH','FIELD','PHASE','TOPO','TIDE','ORBITS','BEAT','SPHERE','WAVEFIELD','DISC','RINGWORLD','CLOUD','DRIFT','TORUSPT','SHELLS','LATTICE','RAINFALL','STRETCH','STRETCHWIDE','STRETCHSWEEP','STRETCHMIST','STRETCHSEA','WIREMOUNT','WIREVALLEY','WIRECITY','WIRECOAST','WIRECANYON','SCAFFOLD','TANGLE','SCANGORGE','SCANFOREST','SCANBOULDER','','','','','','CURTAIN','LICHEN','CONIFER','MOSS','PLUNGE','HAZE','LIGHTLEAK'];
+const STYLES=['FLUX','STRUCTURE','READOUT','PANORAMA','ECLIPSE','BARCODE','SCATTER','SEQUENCE','THERMAL','RADIAL','NEBULA','GALAXY','LATTICE','STREAM','SWARM','SHELL','TORUS','RAIN','WAVEFIELD','BURST','CONCRETE','ARCS','INK','RIPPLE','TRANSIT','PAVING','SURFACE','BUBBLES','FOAM','INSET','STRAND','TRUCHET','SPIRO','POLYGON','FACET','SOLID','TERRAIN','TUBE','MOIRE','RINGS','CODE','','','','','','','','','','ATLAS','SURVEY','FAN','ORBIT','COAST','QUADTREE','CELLS','NIGHT','FIELD','SCAN','SCOPE','DOTWAVE','STACK','SUNSET','PASTEL','RIDGE','NEST','NESTGRID','DIAMOND','TWIST','BLOB','GLYPH','GLYPHFORM','MESH','FLARE','ORB','DUNE','CHROME','SMEAR','TYPE','LEDWALL','ARCBARS','HEXTUNNEL','HEXCIRCUIT','BEAMS','SCRATCH','LISSAJOUS','VSPHERE','PIXELEYE','DASHRING','ACID','ACIDMIRROR','OILCELL','FIBER','FIBERRING','MEMBRANE','GLOWBLOB','SMOKE','DUSTRING','CAUSTIC','WATER','DEW','FROST','FOG','DUNE','CLOUDS','CORONA','PLANET','RAINGLASS','VEINS','CHLADNI','INTERFERENCE','STRINGS','HARMONOGRAPH','FIELD','PHASE','TOPO','TIDE','ORBITS','BEAT','SPHERE','WAVEFIELD','DISC','RINGWORLD','CLOUD','DRIFT','TORUSPT','SHELLS','LATTICE','RAINFALL','STRETCH','STRETCHWIDE','STRETCHSWEEP','STRETCHMIST','STRETCHSEA','WIREMOUNT','WIREVALLEY','WIRECITY','WIRECOAST','WIRECANYON','SCAFFOLD','TANGLE','SCANGORGE','SCANFOREST','SCANBOULDER','','','','','','CURTAIN','LICHEN','CONIFER','MOSS','PLUNGE','HAZE','LIGHTLEAK','','','','SKYDOME','IRIS','MARBLEPANEL','CROWD','DEPTHVIEW','BLOOM'];
 const CODE_STYLE=40;
-const STYLE_JP=['収束する線','3Dデータ構造','数値パネル','星雲パノラマ','天体の満ち欠け','バーコード','点群プロット','塩基配列','熱分布マップ','放射ファイバー','粒子の雲','渦巻銀河','格子点と座標軸','粒子の流れ','群れ','球殻','トーラス','落ちる粒子','粒子の波面','爆発の波','壁と白い弧','弧と反射','白黒の液体','液体の波紋','夜の移動','石畳','水面','水中の泡','雲と泡','小窓','伸び続ける線','伸び続ける迷路','描き続ける曲線','多角形の無限ズーム','ローポリの面','3D多面体','ワイヤー地形','ワイヤートンネル','メッシュのモアレ','同心円の干渉','p5.js コード','','','','','','','','','','衛星写真の断片','三角測量の線','収束する線の束','円と補助線','海岸線と集落','四分木グリッド','光るセル','夜の街明かり','昼の農地と道','セルに地図が出る','重なる波形','点でできた波','編まれた波の段','夕焼けと波','パステルと波','稜線の重なり','回る入れ子の四角','四角のタイル','菱形の入れ子','ねじれる四角','つやのある球体','文字のモザイク','文字でできた形','ワイヤーのチューブ','横に伸びる光','山の上の光球','夕暮れの草原','液体クローム','横に流れるノイズ','大きな文字の組版','カーブしたLEDの壁','弧を描く光のバー','六角形のトンネル','六角タイルと回路','縦の光線とちり','フィルムの傷と光漏れ','オシロのリサージュ','ベクターの球と軌道','ピクセルの目','破線のリング','液体アシッド','鏡合わせの液体','油の泡','繊維の殻','繊維のリング','膜と等高線','光る塊','ぼやけた光の煙','散る粒子のリング','水底の光の網','水面のきらめき','水滴のマクロ','霜の結晶','霧と遠い灯り','砂丘の風紋','見上げた雲','皆既日食のコロナ','惑星の夜明け','窓の雨粒','葉脈の逆光','クラドニ図形','波の干渉の等高線','弦の倍音','ハーモノグラフ','磁力線','位相空間','地形の等高線','海面の線','軌道','うなり','点でできた球','点の波面','点の円盤銀河','点の惑星と環','点の雲','漂うちり','点のトーラス','入れ子の球殻','結晶格子','降る雨','横に引き伸ばされる風景','左右に流れる地平線','引き伸ばしが横切る湖','霧の山並みの引き伸ばし','海と夕日の引き伸ばし','ワイヤーの山岳空撮','ワイヤーの谷空撮','ワイヤーの都市空撮','ワイヤーの海岸空撮','ワイヤーの峡谷空撮','足場のワイヤー構造','絡まる糸の柱','点群スキャン：滝の渓谷','点群スキャン：森','点群スキャン：岩場','','','','','','光のカーテン','地衣類のマクロ','針葉樹のマクロ','苔のじゅうたん','滝つぼの水中','色の霞','光漏れ'];
+const STYLE_JP=['収束する線','3Dデータ構造','数値パネル','星雲パノラマ','天体の満ち欠け','バーコード','点群プロット','塩基配列','熱分布マップ','放射ファイバー','粒子の雲','渦巻銀河','格子点と座標軸','粒子の流れ','群れ','球殻','トーラス','落ちる粒子','粒子の波面','爆発の波','壁と白い弧','弧と反射','白黒の液体','液体の波紋','夜の移動','石畳','水面','水中の泡','雲と泡','小窓','伸び続ける線','伸び続ける迷路','描き続ける曲線','多角形の無限ズーム','ローポリの面','3D多面体','ワイヤー地形','ワイヤートンネル','メッシュのモアレ','同心円の干渉','p5.js コード','','','','','','','','','','衛星写真の断片','三角測量の線','収束する線の束','円と補助線','海岸線と集落','四分木グリッド','光るセル','夜の街明かり','昼の農地と道','セルに地図が出る','重なる波形','点でできた波','編まれた波の段','夕焼けと波','パステルと波','稜線の重なり','回る入れ子の四角','四角のタイル','菱形の入れ子','ねじれる四角','つやのある球体','文字のモザイク','文字でできた形','ワイヤーのチューブ','横に伸びる光','山の上の光球','夕暮れの草原','液体クローム','横に流れるノイズ','大きな文字の組版','カーブしたLEDの壁','弧を描く光のバー','六角形のトンネル','六角タイルと回路','縦の光線とちり','フィルムの傷と光漏れ','オシロのリサージュ','ベクターの球と軌道','ピクセルの目','破線のリング','液体アシッド','鏡合わせの液体','油の泡','繊維の殻','繊維のリング','膜と等高線','光る塊','ぼやけた光の煙','散る粒子のリング','水底の光の網','水面のきらめき','水滴のマクロ','霜の結晶','霧と遠い灯り','砂丘の風紋','見上げた雲','皆既日食のコロナ','惑星の夜明け','窓の雨粒','葉脈の逆光','クラドニ図形','波の干渉の等高線','弦の倍音','ハーモノグラフ','磁力線','位相空間','地形の等高線','海面の線','軌道','うなり','点でできた球','点の波面','点の円盤銀河','点の惑星と環','点の雲','漂うちり','点のトーラス','入れ子の球殻','結晶格子','降る雨','横に引き伸ばされる風景','左右に流れる地平線','引き伸ばしが横切る湖','霧の山並みの引き伸ばし','海と夕日の引き伸ばし','ワイヤーの山岳空撮','ワイヤーの谷空撮','ワイヤーの都市空撮','ワイヤーの海岸空撮','ワイヤーの峡谷空撮','足場のワイヤー構造','絡まる糸の柱','点群スキャン：滝の渓谷','点群スキャン：森','点群スキャン：岩場','','','','','','光のカーテン','地衣類のマクロ','針葉樹のマクロ','苔のじゅうたん','滝つぼの水中','色の霞','光漏れ','','','','魚眼の空と鉄塔','目のマクロ','大理石のパネル','群衆のトラッキング','深度と点群の群衆','咲きひろがる花'];
 const MOTIONS=['SLOW','PULSE','ROTATE','ZOOM','FLOW','GLITCH'];
 const CAMS=['STATIC','FLY','MACRO','WIDE','TUNNEL'];
 const STYLE_P={'FLUX':'monochrome data art, hundreds of thin white lines converging to a vanishing point, binary data blocks streaming along the lines, LED wall',
@@ -3070,7 +3070,7 @@ const STYLE_P={'FLUX':'monochrome data art, hundreds of thin white lines converg
 'DUNE':'dusk landscape, layered hills and swaying grass silhouettes against an orange sky',
 'CHROME':'liquid chrome sphere morphing, studio reflections, dark background',
 'SMEAR':'horizontal pixel smear glitch of blue, violet and pink colour fields',
-'TYPE':'large blocky glyph collage on a multi-scale grid, black, white and blue','LEDWALL':'curved LED wall panorama with pixel shapes and floor reflection','ARCBARS':'stacked curved bars of white light scrolling','HEXTUNNEL':'infinite hexagonal wireframe tunnel','HEXCIRCUIT':'nested hexagon tiles over glowing circuit traces','BEAMS':'vertical light beams with dust and film scratches','SCRATCH':'film light leak with flickering scratches','LISSAJOUS':'green phosphor oscilloscope lissajous figure','VSPHERE':'green vector sphere with orbit ellipses','PIXELEYE':'big pixel mosaic of an eye','DASHRING':'barcode ring of radial dashes','ACID':'psychedelic liquid acid flow','ACIDMIRROR':'mirrored kaleidoscopic liquid','OILCELL':'oil bubbles with bright rims','FIBER':'shell made of glowing hair-like fibres','FIBERRING':'ring and cylinder of glowing fibres','MEMBRANE':'blob membrane with topographic mesh','GLOWBLOB':'soft glowing blob with dithered edge','SMOKE':'blurred drifting light shapes','DUSTRING':'particles drifting off a ring','CAUSTIC':'caustic light network on a pool floor','WATER':'ambient water','DEW':'ambient dew','FROST':'ambient frost','FOG':'ambient fog','DUNE':'ambient dune','CLOUDS':'ambient clouds','CORONA':'ambient corona','PLANET':'ambient planet','RAINGLASS':'ambient rainglass','VEINS':'ambient veins','CHLADNI':'ambient chladni','INTERFERENCE':'ambient interference','STRINGS':'ambient strings','HARMONOGRAPH':'ambient harmonograph','FIELD':'ambient field','PHASE':'ambient phase','TOPO':'ambient topo','TIDE':'ambient tide','ORBITS':'ambient orbits','BEAT':'ambient beat','SPHERE':'ambient sphere','WAVEFIELD':'ambient wavefield','DISC':'ambient disc','RINGWORLD':'ambient ringworld','CLOUD':'ambient cloud','DRIFT':'ambient drift','TORUSPT':'ambient toruspt','SHELLS':'ambient shells','LATTICE':'ambient lattice','RAINFALL':'ambient rainfall','STRETCH':'ambient stretch','STRETCHWIDE':'ambient stretchwide','STRETCHSWEEP':'ambient stretchsweep','STRETCHMIST':'ambient stretchmist','STRETCHSEA':'ambient stretchsea','WIREMOUNT':'ambient wiremount','WIREVALLEY':'ambient wirevalley','WIRECITY':'ambient wirecity','WIRECOAST':'ambient wirecoast','WIRECANYON':'ambient wirecanyon','SCAFFOLD':'ambient scaffold','TANGLE':'ambient tangle','SCANGORGE':'ambient scangorge','SCANFOREST':'ambient scanforest','SCANBOULDER':'ambient scanboulder','':'ambient ','':'ambient ','':'ambient ','':'ambient ','':'ambient ','CURTAIN':'ambient curtain','LICHEN':'ambient lichen','CONIFER':'ambient conifer','MOSS':'ambient moss','PLUNGE':'ambient plunge','HAZE':'ambient haze','LIGHTLEAK':'ambient lightleak'};
+'TYPE':'large blocky glyph collage on a multi-scale grid, black, white and blue','LEDWALL':'curved LED wall panorama with pixel shapes and floor reflection','ARCBARS':'stacked curved bars of white light scrolling','HEXTUNNEL':'infinite hexagonal wireframe tunnel','HEXCIRCUIT':'nested hexagon tiles over glowing circuit traces','BEAMS':'vertical light beams with dust and film scratches','SCRATCH':'film light leak with flickering scratches','LISSAJOUS':'green phosphor oscilloscope lissajous figure','VSPHERE':'green vector sphere with orbit ellipses','PIXELEYE':'big pixel mosaic of an eye','DASHRING':'barcode ring of radial dashes','ACID':'psychedelic liquid acid flow','ACIDMIRROR':'mirrored kaleidoscopic liquid','OILCELL':'oil bubbles with bright rims','FIBER':'shell made of glowing hair-like fibres','FIBERRING':'ring and cylinder of glowing fibres','MEMBRANE':'blob membrane with topographic mesh','GLOWBLOB':'soft glowing blob with dithered edge','SMOKE':'blurred drifting light shapes','DUSTRING':'particles drifting off a ring','CAUSTIC':'caustic light network on a pool floor','WATER':'ambient water','DEW':'ambient dew','FROST':'ambient frost','FOG':'ambient fog','DUNE':'ambient dune','CLOUDS':'ambient clouds','CORONA':'ambient corona','PLANET':'ambient planet','RAINGLASS':'ambient rainglass','VEINS':'ambient veins','CHLADNI':'ambient chladni','INTERFERENCE':'ambient interference','STRINGS':'ambient strings','HARMONOGRAPH':'ambient harmonograph','FIELD':'ambient field','PHASE':'ambient phase','TOPO':'ambient topo','TIDE':'ambient tide','ORBITS':'ambient orbits','BEAT':'ambient beat','SPHERE':'ambient sphere','WAVEFIELD':'ambient wavefield','DISC':'ambient disc','RINGWORLD':'ambient ringworld','CLOUD':'ambient cloud','DRIFT':'ambient drift','TORUSPT':'ambient toruspt','SHELLS':'ambient shells','LATTICE':'ambient lattice','RAINFALL':'ambient rainfall','STRETCH':'ambient stretch','STRETCHWIDE':'ambient stretchwide','STRETCHSWEEP':'ambient stretchsweep','STRETCHMIST':'ambient stretchmist','STRETCHSEA':'ambient stretchsea','WIREMOUNT':'ambient wiremount','WIREVALLEY':'ambient wirevalley','WIRECITY':'ambient wirecity','WIRECOAST':'ambient wirecoast','WIRECANYON':'ambient wirecanyon','SCAFFOLD':'ambient scaffold','TANGLE':'ambient tangle','SCANGORGE':'ambient scangorge','SCANFOREST':'ambient scanforest','SCANBOULDER':'ambient scanboulder','':'ambient ','':'ambient ','':'ambient ','':'ambient ','':'ambient ','CURTAIN':'ambient curtain','LICHEN':'ambient lichen','CONIFER':'ambient conifer','MOSS':'ambient moss','PLUNGE':'ambient plunge','HAZE':'ambient haze','LIGHTLEAK':'ambient lightleak','':'ambient ','':'ambient ','':'ambient ','SKYDOME':'ambient skydome','IRIS':'ambient iris','MARBLEPANEL':'ambient marblepanel','CROWD':'ambient crowd','DEPTHVIEW':'ambient depthview','BLOOM':'ambient bloom'};
 const MOTION_P={SLOW:'slow drifting motion',PULSE:'rhythmic pulsation synced to the beat',ROTATE:'continuous rotation',ZOOM:'infinite zoom',FLOW:'smooth fluid flow',GLITCH:'digital glitch bursts, datamosh'};
 const CAM_P={STATIC:'locked-off static camera',FLY:'low fly-through camera over the surface',MACRO:'extreme macro close-up, shallow depth of field',WIDE:'ultra wide view',TUNNEL:'infinite tunnel movement'};
 const SUFFIX='seamless loop, VJ visual, high contrast, crisp sharp detail, high resolution, dark background, 16:9, no text, no watermark';
@@ -3138,7 +3138,7 @@ function randomGenome(sel){
   };
 }
 function hueLerp(a,b,t){let d=((b-a)%1+1.5)%1-.5;return ((a+d*t)%1+1)%1}
-function seriesOf(s){return s>=150?150:s>=140?140:s>=130?130:s>=120?120:s>=110?110:s>=100?100:s>=90?90:s>=80?80:s>=70?70:s>=60?60:s>=50?50:s>=40?40:s>=30?30:(s>=20?20:(s>=10?10:0))}
+function seriesOf(s){return s>=160?160:s>=150?150:s>=140?140:s>=130?130:s>=120?120:s>=110?110:s>=100?100:s>=90?90:s>=80?80:s>=70?70:s>=60?60:s>=50?50:s>=40?40:s>=30?30:(s>=20?20:(s>=10?10:0))}
 function mutate(base,opt={}){
   const k=S.keep, w=opt.w!=null?opt.w:(S.mut>=.995?1:Math.pow(S.mut,1.25));
   const sel=S.sel;
@@ -4021,6 +4021,117 @@ vec3 flowStyle(vec2 p,vec2 q,float fs,vec2 fc,float c,float th,float K,float b,v
   col=mix(uC1*.22+vec3(0.,.02,.04),mix(W,uAcc,.35),v);
  }
  return col;}
+// ═════ CYBER / SYNTHETIC (shared by VJ and Ambient): fisheye dome · eye · marble panels · crowd tracking · depth · bloom ═════
+// calm=1: slow installation version (no flashes, no red glitch)
+float cyRect(vec2 p,vec2 c,vec2 h,float w){vec2 d=abs(p-c)-h;return LN(abs(max(d.x,d.y)),w);}
+float cyMarbleV(vec2 p,float k,vec4 sd){float n=fbm(p*1.6+sd.xy*7.)*5.+fbm(p*5.+3.)*1.2;float v=abs(sin(p.x*k+p.y*k*.6+n));return pow(v,.18+.25*k*.0);}
+vec3 cyMarble(vec2 p,float dark,vec4 sd){float a=cyMarbleV(p,2.2,sd),b=cyMarbleV(p*1.9+5.,3.3,sd.wzyx);float vein=(1.-a)*.85+(1.-b)*.45;
+ float base=.82+.12*fbm(p*3.);vec3 c=vec3(clamp(base-vein*.75,0.,1.));return dark>.5?vec3(1.)-c*1.05+vec3(.05):c;}
+vec3 cyFisheye(vec2 q,float c,float th,float m,vec4 sd,float calm,float b){
+ float ph=th*m,R=.62,r=length(q)/R,a=atan(q.y,q.x);vec3 col;
+ vec3 sky=mix(vec3(.97,.98,1.),vec3(.62,.75,.92),smoothstep(.2,1.,r));col=sky;
+ // tree canopy around the rim
+ float tr=.68+.22*fbm(vec2(cos(a),sin(a))*3.+sd.xy*5.)+.06*noise(vec2(a*30.,r*10.));
+ float tree=smoothstep(tr-.01,tr+.01,r);col=mix(col,vec3(.03,.05,.03)+vec3(.06,.12,.05)*fbm(q*30.),tree);
+ // a lattice pylon leaning into the centre
+ float a0=-1.5708+.15*sin(sd.z*6.),da=a-a0,w=.025+.06*(1.-r);float py=step(abs(da),w)*step(.12,r)*step(r,1.05);
+ float rail=LN(abs(abs(da)-w)*r*R,PX*1.);float zig=LN(abs(fract(log(max(r,.01))*9.+da/w*.5)-.5)*w*r*R*2.,PX*.7);
+ col=mix(col,vec3(.08),clamp((rail+zig*py)*step(.12,r),0.,1.)*(1.-tree*.5));
+ float cab=LN(abs(da-(r-.2)*.35),PX*.5)*step(.2,r);col=mix(col,vec3(.15),cab*.7);
+ // dome grid overlay
+ float rings=LN(abs(fract(r*25.)-.5)/25.*R,PX*.6)*.55,spk=LN(abs(fract(a/TAU*96.)-.5)*TAU/96.*r*R,PX*.5)*.4*step(.2,r);
+ vec3 ink=vec3(.35,.4,.5);col=mix(col,ink,clamp(rings+spk,0.,1.)*(.4+.6*(1.-tree)));
+ col=mix(col,vec3(.36,.58,.95),1.-smoothstep(.15,.155,r));                         // the blue sun disc
+ float hr=.18+.12*fract(c*m*4.),hl=LN(abs(r-hr)*R,PX*2.5);vec3 hc=mod(floor(c*m*4.),2.)<.5?vec3(.75,.95,.3):vec3(.95,.45,.85);
+ col=mix(col,hc,hl*(calm>.5?.35:.9));
+ if(calm<.5){ // glitch: the frame drops to a blue error screen with scrolling text
+  float slot=floor(c*uL*2.);float g=step(.86,h21(vec2(slot,sd.x*9.)));
+  if(g>.5){vec3 bl=vec3(.0,.05,.75);float txt=0.;for(int i=0;i<14;i++){float fi=float(i);txt=max(txt,textAt(q,vec2(-.27,.48-fi*.055),.03,mod(fi+slot,4.),sd.y+fi,slot));}
+   col=mix(bl+vec3(.05,.08,.15)*(1.-tree),vec3(.95),txt);col=mix(col,vec3(.9,.95,1.),tree*step(.5,h21(floor(q*90.)+slot))*.8);}}
+ return col;}
+vec3 cyEye(vec2 q,float c,float th,float m,vec4 sd,float calm,float b){
+ float ph=th*m;vec2 v=q*(calm>.5?1.+.15*sin(th):1.1)+vec2(.05,0.);
+ float lid=.2*(1.-pow(v.x/.52,2.));float open=step(abs(v.y),lid)*step(abs(v.x),.52);
+ vec2 ic=vec2(.04,0.);float ir=length(v-ic),ia=atan(v.y-ic.y,v.x-ic.x);
+ float skin=.32+.25*fbm(v*vec2(30.,60.))+.15*noise(v*240.);vec3 col=vec3(skin*smoothstep(.8,.2,length(v)));
+ float fib=.55+.45*noise(vec2(ia*30.,ir*20.));float iris=1.-smoothstep(.15,.155,ir);
+ float pw=calm>.5?.03+.015*sin(ph):.035;float pupil=step(abs(v.y-ic.y),pw*.45)*step(abs(v.x-ic.x),.07);
+ vec3 eye=mix(vec3(.88),vec3(.55+.4*fib*(1.-ir/.15)),iris);eye=mix(eye,vec3(.02),pupil*iris);
+ eye+=vec3(1.)*exp(-dot(v-vec2(-.03,.05),v-vec2(-.03,.05))*900.)*.8;eye*=.75+.25*smoothstep(lid,lid*.5,abs(v.y));
+ col=mix(col,eye,open);
+ float lash=0.;for(int i=0;i<40;i++){float fi=float(i),x0=-.48+fi*.024,y0=.2*(1.-pow(x0/.52,2.));vec2 d=vec2(.02+.03*h21(vec2(fi,2.)),.06+.04*h21(vec2(fi,3.)));lash=max(lash,LN(sdSeg(v,vec2(x0,y0),vec2(x0,y0)+d),PX*.7));}
+ col=mix(col,vec3(.02),lash);
+ if(calm<.5){float slot=floor(c*uL*3.);float vis=step(.45,h21(vec2(slot,7.)));col*=vis;
+  vec2 gq=floor(q*vec2(60.,20.));float rg=step(.993,h21(gq+slot))*step(abs(q.x-.1),.3);col=mix(col,vec3(.85,.05,.05),rg);}
+ return col;}
+vec3 cyMarbleP(vec2 q,float c,float th,float m,vec4 sd,float calm,float b){
+ vec3 col=vec3(0.);float ph=th*m;
+ for(int i=0;i<4;i++){float fi=float(i);float slot=calm>.5?floor(c*4.):floor(c*uL*1.5);float h=h21(vec2(slot*3.+fi,sd.x*9.));
+  vec2 ce=(h22(vec2(slot+fi*7.,3.))-.5)*vec2(.4,.8),hs=vec2(.08+.2*h21(vec2(fi,slot+1.)),.1+.25*h21(vec2(fi,slot+2.)));
+  if(h<(calm>.5?.15:.35))continue;vec2 d=abs(q-ce)-hs;float inside=step(max(d.x,d.y),0.);
+  float fade=calm>.5?smoothstep(0.,.08,fract(c*4.))*smoothstep(1.,.92,fract(c*4.)):1.;
+  col=mix(col,cyMarble(q*1.5+fi*3.+vec2(0.,.05*sin(ph)),step(.5,h21(vec2(fi,slot+5.))),sd),inside*fade);}
+ if(calm<.5){float slot=floor(c*uL*4.);
+  for(int i=0;i<6;i++){float fi=float(i);vec2 ce=(h22(vec2(fi,slot))-.5)*vec2(.5,.9);vec2 hs=vec2(.01+.03*h21(vec2(fi,slot+1.)),.01+.05*h21(vec2(fi,slot+2.)));
+   float u=cyRect(q,ce,hs,PX*.8)+LN(abs(q.y-ce.y-hs.y-.01),PX*.6)*step(abs(q.x-ce.x),hs.x*2.);col=mix(col,vec3(.85,.05,.04),clamp(u,0.,1.)*step(.4,h21(vec2(fi,slot+9.))));}}
+ return col;}
+vec2 fc2(vec2 q){return q*uRes.y;}
+// a simple walking figure in screen space; returns coverage
+float cyFig(vec2 p,vec2 f,float s,float ph){vec2 l=(p-f)/s;
+ float body=step(abs(l.x),.18)*step(.35,l.y)*step(l.y,.9);float head=1.-step(.13,length(l-vec2(0.,1.02)));
+ float leg1=step(abs(l.x-.07*sin(ph)),.06)*step(0.,l.y)*step(l.y,.4),leg2=step(abs(l.x+.07*sin(ph)),.06)*step(0.,l.y)*step(l.y,.4);
+ return max(max(body,head),max(leg1,leg2));}
+vec3 cyCrowd(vec2 q,float c,float th,float m,vec4 sd,float calm,float mode){
+ // mode 0 grey street · 1 depth map · 2 green lidar · 3 white with coloured boxes (calm: soft white)
+ float hz=.16,f=.5,ch=2.4;vec3 col;
+ float Z=q.y<hz?ch*f/(hz-q.y):99.;vec2 G=vec2(q.x*Z/f,Z);
+ if(mode<.5){col=q.y<hz?vec3(.42,.41,.39)*(.75+.25*fbm(G*2.))*(.7+.3*smoothstep(10.,2.,Z)):vec3(.6,.62,.64);}
+ else if(mode<1.5){col=vec3(mix(.95,.35,smoothstep(1.,14.,Z)))*(q.y<hz?1.:.3);}
+ else if(mode<2.5){col=vec3(0.);float gp=step(.75,h21(floor(fc2(q)*.5)))*step(q.y,hz)*smoothstep(14.,2.,Z)*(.4+.6*fbm(G*1.3));col=vec3(.1,.95,.2)*gp*.7;}
+ else col=vec3(.97);
+ float net=0.;vec3 add=vec3(0.);float cover=0.;vec3 figc=vec3(0.);
+ vec2 prev=vec2(0.);
+ for(int i=0;i<22;i++){float fi=float(i),h=h21(vec2(fi,sd.x*13.)),dir=h21(vec2(fi,3.))<.5?-1.:1.,sp=1.+floor(h*2.);
+  float zw=2.+11.*h21(vec2(fi,5.)),xw=(fract(h*7.+dir*c*m*sp*.5)-.5)*2.*(zw*.55+1.);
+  float sy=hz-ch*f/zw,s=.9*f/zw;vec2 fp=vec2(xw*f/zw,sy);
+  float cv=cyFig(q,fp,s,th*m*sp*12.+fi);
+  vec3 fc=mode<.5?vec3(.12):(mode<1.5?vec3(mix(.98,.5,smoothstep(1.,14.,zw))):(mode<2.5?vec3(.15,1.,.25):(calm>.5?vec3(.45):vec3(.1))));
+  if(mode>1.5&&mode<2.5){vec2 l=(q-fp)/s;cv*=step(.6,h21(floor(q/(PX*3.))+fi));}
+  if(cv>.5&&zw<99.)figc=fc;cover=max(cover,cv);
+  vec2 bc=fp+vec2(0.,.6*s),bh=vec2(.28*s,.62*s);
+  float bx=cyRect(q,bc,bh,PX*.7);vec3 bcol=mode>2.5&&calm<.5?(h21(vec2(fi,9.))<.5?vec3(.15,.55,1.):vec3(.95,.15,.15)):vec3(.95);
+  if(mode>2.5&&calm<.5){float fill=step(max(abs(q.x-bc.x)-bh.x,abs(q.y-bc.y)-bh.y),0.)*step(.55,h21(vec2(fi,11.)));add=mix(add,bcol*.85,fill*.8);}
+  add=max(add,(mode<1.5||mode>2.5?bcol:vec3(.2,1.,.3))*bx*(mode==1.?.6:1.)*(calm>.5?.6:1.));
+  add=max(add,vec3(1.)*step(abs(q.x-bc.x+bh.x*.5),bh.x*.5)*step(abs(q.y-bc.y-bh.y-.012),.008)*(mode>.5&&mode<1.5?0.:1.));
+  if(i>0)net=max(net,LN(sdSeg(q,prev,bc),PX*.5)*step(length(prev-bc),.45));prev=bc;}
+ col=mix(col,figc,cover);col=max(col,add*(mode>2.5&&calm>.5?0.:1.));if(mode>2.5&&calm>.5)col=mix(col,vec3(.55),clamp(add.r,0.,1.)*.8);
+ vec3 nc=mode>2.5?vec3(.55):vec3(.85);col=mix(col,nc,net*(mode>1.5&&mode<2.5?.4:.7));
+ return col;}
+vec3 cyBloom(vec2 q,float c,float th,float m,vec4 sd,float calm){
+ float t=c;float grow=smoothstep(.0,.15,t),bloom=smoothstep(.12,.7,t),fade=smoothstep(1.,.88,t);
+ vec2 v=q;v.x+=.02*sin(th*2.+v.y*3.)*(v.y+.5);
+ float top=mix(-.5,.12,grow);vec3 col=vec3(.0);
+ float stem=LN(abs(v.x-.03*sin(v.y*5.+sd.x*6.)),PX*.9)*step(-.55,v.y)*step(v.y,top);col+=vec3(.2,.5,.2)*stem*fade;
+ vec2 ce=vec2(0.,.12);
+ for(int L=0;L<3;L++){float fl=float(L),cs=.016+.01*fl;vec2 g=(rot(.08*sin(th+fl))*(v-ce))/cs+fl*31.;vec2 gi=floor(g),gf=fract(g)-.5;
+  vec2 pc=(gi+.5+(h22(gi)-.5)*.8)*cs;float d0=length(pc*vec2(1.,1.25));
+  float shape=smoothstep(.36,.22,d0+.08*fbm(pc*8.+sd.zw*5.)-.03*pc.y*0.);float h=h21(gi+fl*7.);
+  float appear=smoothstep(d0*1.6,d0*1.6+.15,bloom*1.25);
+  if(h<.12||shape<.01)continue;
+  float r=(.26+.22*h21(gi+2.))*(fl<.5?1.:.8);float dt=length(gf-(h22(gi)-.5)*.8);
+  float dot2=(1.-smoothstep(r*.5,r,dt))*shape*appear*fade;
+  vec3 fcol=mix(vec3(.62,.45,.95),vec3(.95,.72,.92),h21(gi+4.));fcol=mix(fcol,vec3(.98,.95,1.),step(.85,h21(gi+5.)));fcol=mix(fcol,vec3(.75,.85,.45),step(.93,h21(gi+6.)));
+  col=max(col,fcol*dot2*(fl<.5?1.:.7));col+=fcol*.06*shape*appear*fade;
+  float fil=LN(sdSeg(v,ce+vec2(0.,-.05),pc+ce),PX*.4)*step(.9,h)*appear*fade*.35;col=max(col,vec3(.4,.55,.35)*fil);}
+ return col;}
+vec3 cyberStyle(vec2 p,vec2 q,float cs,vec2 fc,float c,float th,float K,float b,vec4 sd,float calm){
+ float m=max(1.,K);
+ if(cs<.5)return cyFisheye(q,c,th,m,sd,calm,b);
+ if(cs<1.5)return cyEye(q,c,th,m,sd,calm,b);
+ if(cs<2.5)return cyMarbleP(q,c,th,m,sd,calm,b);
+ if(cs<3.5){float slot=floor(c*(calm>.5?2.:uL*.5));float md=calm>.5?3.:(mod(slot,2.)<.5?0.:3.);return cyCrowd(q,c,th,m,sd,calm,md);}
+ if(cs<4.5){float slot=floor(c*(calm>.5?2.:uL*.5));float md=calm>.5?(mod(slot,2.)<.5?1.:2.):(mod(slot,2.)<.5?1.:2.);return cyCrowd(q,c,th,m,sd,calm,md);}
+ return cyBloom(q,c,th,m,sd,calm);}
 // ═════ AMBIENT (100-129): nature/macro · frequency/science · cosmos — slow, loop-exact ═════
 vec3 W3(){return vec3(.93);}
 float aVor(vec2 z,vec2 s){vec2 zi=floor(z),zf=fract(z);float d1=8.,d2=8.;
@@ -4685,6 +4796,7 @@ vec3 macroStyle(vec2 p,vec2 q,float ms,vec2 fc,float c,float th,float m,vec4 sd)
  return aGrainC(col,q,fc,c);}
 vec3 ambStyle2(vec2 p,vec2 q,float as,vec2 fc,float c,float th,float K,vec4 sd){
  float m=max(1.,K);
+ if(as>=59.5)return aGrainC(cyberStyle(p,q,as-60.,fc,c,th,m,0.,sd,1.),q,fc,c);
  if(as>=49.5)return macroStyle(p,q,as-50.,fc,c,th,m,sd);
  if(as>=39.5)return scanStyle(p,q,as-40.,fc,c,th,m,sd);
  if(as>=29.5)return sceneStyle(p,q,as-30.,fc,c,th,m,sd);
@@ -6617,7 +6729,7 @@ refill();lkBoot();codeBoot();
 const AM={tpl:0,cur:null,bpm:124,title:true,pend:null,lastSwitchBeat:-999,fxOffAt:-1,
   sp:{cid:'',at:'',rt:'',exp:0,track:null,playing:false,pollT:0,backoff:0,err:''}};
 const range=(a,b)=>{const o=[];for(let i=a;i<=b;i++)o.push(i);return o};
-const SER={FILM:range(100,109).filter(x=>x!==102&&x!==101),LINE:range(110,119).filter(x=>x!==115),PTCL:range(120,129),SCENE:range(130,134),SCAN:range(140,144),MACRO:range(150,156)};
+const SER={FILM:range(100,109).filter(x=>x!==102&&x!==101),LINE:range(110,119).filter(x=>x!==115),PTCL:range(120,129),SCENE:range(130,134),SCAN:range(140,144),MACRO:range(150,156),SYNTH:range(160,165)};
 window.__AMCALM={low:.35,mid:.45,high:.25,lvl:.6,beat:0,kick:0,hat:0,bass:.35,energy:.6};
 const GRADE0={hue:0,sat:100,con:100,exp:0,bloom:0,tintAmt:0,tintHue:200,inv:false,mono:false,flash:false};
 /* テンプレート：
@@ -6626,7 +6738,7 @@ const GRADE0={hue:0,sat:100,con:100,exp:0,bloom:0,tintAmt:0,tintHue:200,inv:fals
    pal=色の決め方 / cam=360°カメラ / grade=色補正 / fx=拍でFXを打つ */
 const palMono=r=>({hue:r(),sat:0,spread:.05});
 const palTint=r=>({hue:[.07,.1,.13,.52,.56,.6][Math.floor(r()*6)],sat:.18+r()*.2,spread:.05});
-const ALL=[...SER.FILM,...SER.LINE,...SER.PTCL,...SER.SCENE,...SER.SCAN,...SER.MACRO];
+const ALL=[...SER.FILM,...SER.LINE,...SER.PTCL,...SER.SCENE,...SER.SCAN,...SER.MACRO,...SER.SYNTH];
 const TPL=[
  {n:'GALLERY',jp:'白黒・静かな展示',pool:ALL,motions:[0],cams:[0],x:'fade',xb:64,scene:64,mut:.15,track:96,
   pal:palMono,cam:{mode:'drift',range:20,speed:35,every:8},camW:{off:.7,drift:.3},grade:{con:100}},
@@ -6642,6 +6754,8 @@ const TPL=[
   pal:palMono,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100,bloom:12}},
  {n:'MACRO',jp:'自然のマクロ・水・光',pool:SER.MACRO,motions:[0],cams:[0],x:'fade',xb:32,scene:32,mut:.2,track:64,
   pal:palTint,cam:{mode:'drift',range:8,speed:30,every:8},camW:{off:.7,drift:.3},grade:{con:100}},
+ {n:'SYNTHETIC',jp:'観測・トラッキング・花',pool:SER.SYNTH,motions:[0],cams:[0],x:'fade',xb:24,scene:32,mut:.2,track:64,
+  pal:palMono,cam:{mode:'drift',range:5,speed:30,every:8},camW:{off:1},grade:{con:100}},
  {n:'DEEP CALM',jp:'とても長いフェード・淡い色味',pool:ALL,motions:[0],cams:[0],x:'fade',xb:64,scene:96,mut:.12,track:128,
   pal:palTint,cam:{mode:'drift',range:15,speed:30,every:8},camW:{off:.75,drift:.25},grade:{con:95,bloom:10}},
  {n:'RANDOM',jp:'曲ごとにスタイル抽選',random:true},
@@ -6659,7 +6773,7 @@ function applyLook(t){
 }
 function curT(){return AM.cur||TPL[AM.tpl]}
 /* 映像の種類（元アプリのタブ）。何も選ばない＝AUTO（テンプレートのおすすめ） */
-const SER_JP={FILM:'実写の質感',LINE:'ラインアート',PTCL:'3Dの粒子',SCENE:'引き伸ばす風景',SCAN:'スキャン・構造',MACRO:'自然のマクロ・光'};
+const SER_JP={FILM:'実写の質感',LINE:'ラインアート',PTCL:'3Dの粒子',SCENE:'引き伸ばす風景',SCAN:'スキャン・構造',MACRO:'自然のマクロ・光',SYNTH:'都市・観測'};
 AM.series=new Set((LS.get('vjamb.series')||'').split(',').filter(n=>SER[n]));
 function poolOf(t){if(!AM.series.size)return t.pool;const p=[];for(const n of AM.series)p.push(...SER[n]);return p}
 
@@ -6947,7 +7061,7 @@ function qLoop(t){
 $('amQ').onclick=()=>{Q.mode=({auto:'max',max:'std',std:'auto'})[Q.mode];LS.set('vjamb.q',Q.mode);Q.iv=[];Q.good=0;if(Q.mode==='auto')S.res=Math.min(Q.max,Math.max(S.res,.8));qApply()};
 S.res=Q.mode==='auto'?Math.min(Q.max,1):S.res;qApply();requestAnimationFrame(qLoop);
 
-window.__amForce=(st)=>{const t=curT();S.sel={style:st,motion:0,cam:0};const g=mutate(null);g.camCfg={mode:'off',range:0,speed:100,every:4,roll:false};const nxt=1-S.live;S.dk[nxt]=g;g.lt=7;S.live=nxt;S.fv=nxt;S.xf.anim=null;return STYLES[st]};
+window.__amForce=(st,lt)=>{const t=curT();S.sel={style:st,motion:0,cam:0};const g=mutate(null);g.camCfg={mode:'off',range:0,speed:100,every:4,roll:false};const nxt=1-S.live;S.dk[nxt]=g;g.lt=lt==null?7:lt;S.live=nxt;S.fv=nxt;S.xf.anim=null;return STYLES[st]};
 /* ---- 起動 ---- */
 setPerform=function(){};
 document.body.classList.add('perform','am');
